@@ -366,8 +366,8 @@ if (!isset($current_page)) {
 
     /* Mobile Slide-down Menu */
     .pgn-mobile-menu {
-        position: fixed;
-        top: 102px;
+        position: absolute;
+        top: 110px;
         left: 2.5%;
         width: 95%;
         background: linear-gradient(160deg, rgba(20, 35, 18, 0.97), rgba(30, 50, 28, 0.97));
@@ -376,14 +376,96 @@ if (!isset($current_page)) {
         border: 1px solid rgba(255,255,255,.15);
         border-radius: 28px;
         padding: 24px 20px;
-        display: none;
-        flex-direction: column;
-        gap: 6px;
         z-index: 999;
         box-shadow: 0 20px 60px rgba(0,0,0,.5), 0 0 40px rgba(177,152,111,.15);
         font-family: 'Inter', sans-serif;
         max-height: 82vh;
         overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        /* Animation properties */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        pointer-events: none;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .pgn-mobile-menu.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    /* Staggered Children Animation */
+    .pgn-mobile-menu > * {
+        opacity: 0;
+        transform: translateY(15px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .pgn-mobile-menu.open > * {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .pgn-mobile-menu.open > *:nth-child(1) { transition-delay: 0.1s; }
+    .pgn-mobile-menu.open > *:nth-child(2) { transition-delay: 0.15s; }
+    .pgn-mobile-menu.open > *:nth-child(3) { transition-delay: 0.2s; }
+    .pgn-mobile-menu.open > *:nth-child(4) { transition-delay: 0.25s; }
+    .pgn-mobile-menu.open > *:nth-child(5) { transition-delay: 0.3s; }
+    .pgn-mobile-menu.open > *:nth-child(6) { transition-delay: 0.35s; }
+    .pgn-mobile-menu.open > *:nth-child(7) { transition-delay: 0.4s; }
+
+    /* Accordion Groups */
+    .pgn-mobile-group {
+        display: flex;
+        flex-direction: column;
+    }
+    .pgn-mobile-item-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 14px;
+        transition: background 0.25s;
+    }
+    .pgn-mobile-item-container:hover {
+        background: rgba(177, 152, 111, 0.08);
+    }
+    
+    .pgn-submenu-toggle {
+        background: transparent;
+        border: none;
+        color: rgba(255,255,255,0.6);
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .pgn-submenu-toggle:hover {
+        color: #b1986f;
+    }
+    .pgn-submenu-toggle.expanded {
+        transform: rotate(90deg);
+        color: #b1986f;
+    }
+
+    .pgn-mobile-submenu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-top: 0;
+    }
+    .pgn-mobile-submenu.open {
+        margin-top: 4px;
+        /* max-height is set via JS */
     }
 
     .pgn-mobile-item {
@@ -396,6 +478,7 @@ if (!isset($current_page)) {
         gap: 14px;
         padding: 13px 18px;
         border-radius: 14px;
+        flex-grow: 1;
         transition: background 0.25s, color 0.25s;
     }
     .pgn-mobile-item i {
@@ -406,7 +489,6 @@ if (!isset($current_page)) {
         flex-shrink: 0;
     }
     .pgn-mobile-item:hover {
-        background: rgba(177, 152, 111, 0.15);
         color: white;
     }
     .pgn-mobile-item.active {
@@ -514,6 +596,13 @@ if (!isset($current_page)) {
     body.light-theme .pgn-mobile-subitem:hover {
         color: #3f4b3d;
         background: rgba(0,0,0,0.05);
+    }
+    body.light-theme .pgn-submenu-toggle {
+        color: rgba(0,0,0,0.5);
+    }
+    body.light-theme .pgn-submenu-toggle:hover,
+    body.light-theme .pgn-submenu-toggle.expanded {
+        color: #b1986f;
     }
 </style>
 
@@ -640,29 +729,50 @@ if (!isset($current_page)) {
         <i class="fa-solid fa-house"></i> Home
     </a>
     
-    <a href="/icon-dental/about.php" class="pgn-mobile-item <?= (strpos($current_page, 'about') !== false) ? 'active' : '' ?>">
-        <i class="fa-solid fa-user-group"></i> About
-    </a>
-    <a href="/icon-dental/about/why-choose-us.php" class="pgn-mobile-subitem">Why Choose Us</a>
-    <a href="/icon-dental/about/meet-the-team.php" class="pgn-mobile-subitem">Meet The Team</a>
-    <a href="/icon-dental/about/smile-stories.php" class="pgn-mobile-subitem">Smile Stories</a>
+    <div class="pgn-mobile-group">
+        <div class="pgn-mobile-item-container">
+            <a href="/icon-dental/about.php" class="pgn-mobile-item <?= (strpos($current_page, 'about') !== false) ? 'active' : '' ?>">
+                <i class="fa-solid fa-user-group"></i> About
+            </a>
+            <button class="pgn-submenu-toggle"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <div class="pgn-mobile-submenu">
+            <a href="/icon-dental/about/why-choose-us.php" class="pgn-mobile-subitem">Why Choose Us</a>
+            <a href="/icon-dental/about/meet-the-team.php" class="pgn-mobile-subitem">Meet The Team</a>
+            <a href="/icon-dental/about/smile-stories.php" class="pgn-mobile-subitem">Smile Stories</a>
+        </div>
+    </div>
     
-    <a href="/icon-dental/treatments.php" class="pgn-mobile-item <?= ($current_page == 'treatments.php') ? 'active' : '' ?>">
-        <i class="fa-solid fa-tooth"></i> Treatments
-    </a>
-    <a href="/icon-dental/treatments/general-dentistry.php" class="pgn-mobile-subitem">General Dentistry</a>
-    <a href="/icon-dental/treatments/cosmetic-dentistry.php" class="pgn-mobile-subitem">Cosmetic Dentistry</a>
-    <a href="/icon-dental/treatments/orthodontics.php" class="pgn-mobile-subitem">Orthodontics</a>
-    <a href="/icon-dental/treatments.php#implants" class="pgn-mobile-subitem">Dental Implants</a>
+    <div class="pgn-mobile-group">
+        <div class="pgn-mobile-item-container">
+            <a href="/icon-dental/treatments.php" class="pgn-mobile-item <?= ($current_page == 'treatments.php') ? 'active' : '' ?>">
+                <i class="fa-solid fa-tooth"></i> Treatments
+            </a>
+            <button class="pgn-submenu-toggle"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <div class="pgn-mobile-submenu">
+            <a href="/icon-dental/treatments/general-dentistry.php" class="pgn-mobile-subitem">General Dentistry</a>
+            <a href="/icon-dental/treatments/cosmetic-dentistry.php" class="pgn-mobile-subitem">Cosmetic Dentistry</a>
+            <a href="/icon-dental/treatments/orthodontics.php" class="pgn-mobile-subitem">Orthodontics</a>
+            <a href="/icon-dental/treatments.php#implants" class="pgn-mobile-subitem">Dental Implants</a>
+        </div>
+    </div>
     
     <a href="/icon-dental/fees-membership.php" class="pgn-mobile-item <?= ($current_page == 'fees-membership.php') ? 'active' : '' ?>">
         <i class="fa-regular fa-credit-card"></i> Fees &amp; Membership
     </a>
     
-    <a href="/icon-dental/for-dentists.php" class="pgn-mobile-item <?= ($current_page == 'for-dentists.php') ? 'active' : '' ?>">
-        <i class="fa-solid fa-user-doctor"></i> For Dentists
-    </a>
-    <a href="/icon-dental/for-dentists.php#careers" class="pgn-mobile-subitem">Education &amp; Careers</a>
+    <div class="pgn-mobile-group">
+        <div class="pgn-mobile-item-container">
+            <a href="/icon-dental/for-dentists.php" class="pgn-mobile-item <?= ($current_page == 'for-dentists.php') ? 'active' : '' ?>">
+                <i class="fa-solid fa-user-doctor"></i> For Dentists
+            </a>
+            <button class="pgn-submenu-toggle"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <div class="pgn-mobile-submenu">
+            <a href="/icon-dental/for-dentists.php#careers" class="pgn-mobile-subitem">Education &amp; Careers</a>
+        </div>
+    </div>
 
     <div class="pgn-mobile-divider"></div>
 
@@ -722,22 +832,41 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (mobileNavToggle && mobileMenu) {
         mobileNavToggle.addEventListener('click', function() {
-            const isOpen = mobileMenu.style.display === 'flex';
+            const isOpen = mobileMenu.classList.contains('open');
             if (isOpen) {
-                mobileMenu.style.display = 'none';
+                mobileMenu.classList.remove('open');
                 mobileNavToggle.classList.remove('open');
                 mobileNavToggle.querySelector('i').classList.replace('fa-xmark', 'fa-bars');
             } else {
-                mobileMenu.style.display = 'flex';
+                mobileMenu.classList.add('open');
                 mobileNavToggle.classList.add('open');
                 mobileNavToggle.querySelector('i').classList.replace('fa-bars', 'fa-xmark');
             }
         });
 
-        // Close menu when clicking a link
+        // Toggle Submenus
+        const submenuToggles = document.querySelectorAll('.pgn-submenu-toggle');
+        submenuToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                const submenu = this.closest('.pgn-mobile-group').querySelector('.pgn-mobile-submenu');
+                
+                if (this.classList.contains('expanded')) {
+                    this.classList.remove('expanded');
+                    submenu.classList.remove('open');
+                    submenu.style.maxHeight = '0px';
+                } else {
+                    this.classList.add('expanded');
+                    submenu.classList.add('open');
+                    submenu.style.maxHeight = submenu.scrollHeight + "px";
+                }
+            });
+        });
+
+        // Close menu when clicking a normal link (not a toggle)
         mobileMenu.querySelectorAll('a').forEach(function(link) {
             link.addEventListener('click', function() {
-                mobileMenu.style.display = 'none';
+                mobileMenu.classList.remove('open');
                 mobileNavToggle.classList.remove('open');
                 mobileNavToggle.querySelector('i').classList.replace('fa-xmark', 'fa-bars');
             });
