@@ -867,5 +867,6 @@
             });
         });
     </script>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/icon-dental/includes/footer.php'; ?>
 </body>
 </html>
