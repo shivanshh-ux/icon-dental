@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orthodontics | Icon Dental Wembley</title>
+    <title>Bone Grafting | Icon Dental Wembley</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -540,16 +540,16 @@
                 <i class="fa-solid fa-chevron-right"></i>
                 <a href="/icon-dental/treatments.php">Treatments</a>
                 <i class="fa-solid fa-chevron-right"></i>
-                <span class="current">Orthodontics</span>
+                <span class="current">Bone Grafting</span>
             </div>
 
             <!-- Hero Section -->
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="hero-label">ORTHODONTICS</div>
-                    <h1 class="hero-title">Straighter Teeth.<br>Healthier Smile.<br>Greater Confidence.</h1>
+                    <div class="hero-label">BONE GRAFTING</div>
+                    <h1 class="hero-title">Restoring Bone.<br>Building Foundations.<br>Securing Smiles.</h1>
                     <div class="hero-title-line"></div>
-                    <p class="hero-desc">Our orthodontic treatments are tailored to align your teeth, improve your bite and enhance your overall oral health with discreet, comfortable and effective solutions.</p>
+                    <p class="hero-desc">Our bone grafting treatments are designed to rebuild jawbone structure, providing a strong, healthy foundation for dental implants and restoring your natural facial contours.</p>
                     
                     <div class="feature-grid">
                         <div class="feature-item">
@@ -582,14 +582,6 @@
                         </div>
                     </div>
 
-                    <div class="btn-group-custom d-flex gap-3 mt-2">
-                        <a href="#" class="btn-primary-dark">
-                            Book a Consultation <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                        <a href="#" class="btn-outline-gold">
-                            Explore Options <div class="btn-icon-circle"><i class="fa-solid fa-arrow-right"></i></div>
-                        </a>
-                    </div>
                 </div>
 
                 <div class="col-lg-6">
@@ -609,12 +601,12 @@
             <!-- Treatments Section -->
             <section class="treatments-section">
                 <div class="section-header">
-                    <div class="tooth-icon"><i class="fa-solid fa-tooth"></i></div>
-                    <h2 class="section-title">Our Orthodontic Treatments</h2>
+
+                    <h2 class="section-title">Our Bone Grafting Procedures</h2>
                 </div>
 
                 <div class="cards-grid">
-                    <a href="#" class="treatment-card">
+                    <a href="#" class="treatment-card" data-bs-toggle="modal" data-bs-target="#treatmentModal" onclick="event.preventDefault(); populateModal(this)">
                         <div class="card-img-wrapper">
                             <img src="../assets/images/invisalign-treatment.jpg" alt="Invisalign">
                         </div>
@@ -623,7 +615,7 @@
                         <div class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
                     </a>
                     
-                    <a href="#" class="treatment-card">
+                    <a href="#" class="treatment-card" data-bs-toggle="modal" data-bs-target="#treatmentModal" onclick="event.preventDefault(); populateModal(this)">
                         <div class="card-img-wrapper">
                             <img src="../assets/images/metal-braces.jpg" alt="Metal Braces">
                         </div>
@@ -632,7 +624,7 @@
                         <div class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
                     </a>
 
-                    <a href="#" class="treatment-card">
+                    <a href="#" class="treatment-card" data-bs-toggle="modal" data-bs-target="#treatmentModal" onclick="event.preventDefault(); populateModal(this)">
                         <div class="card-img-wrapper">
                             <img src="../assets/images/ceramic-braces.jpg" alt="Ceramic Braces">
                         </div>
@@ -641,7 +633,7 @@
                         <div class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
                     </a>
 
-                    <a href="#" class="treatment-card">
+                    <a href="#" class="treatment-card" data-bs-toggle="modal" data-bs-target="#treatmentModal" onclick="event.preventDefault(); populateModal(this)">
                         <div class="card-img-wrapper">
                             <img src="../assets/images/lingual-braces.jpg" alt="Lingual Braces">
                         </div>
@@ -650,7 +642,7 @@
                         <div class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
                     </a>
 
-                    <a href="#" class="treatment-card">
+                    <a href="#" class="treatment-card" data-bs-toggle="modal" data-bs-target="#treatmentModal" onclick="event.preventDefault(); populateModal(this)">
                         <div class="card-img-wrapper">
                             <img src="../assets/images/early-orthodontics.jpg" alt="Early Orthodontics">
                         </div>
@@ -659,7 +651,7 @@
                         <div class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
                     </a>
 
-                    <a href="#" class="treatment-card">
+                    <a href="#" class="treatment-card" data-bs-toggle="modal" data-bs-target="#treatmentModal" onclick="event.preventDefault(); populateModal(this)">
                         <div class="card-img-wrapper">
                             <img src="../assets/images/retainers.jpg" alt="Retainers">
                         </div>
@@ -674,7 +666,7 @@
                     <div class="cta-left">
                         <div class="cta-icon"><i class="fa-regular fa-calendar-check"></i></div>
                         <div class="cta-text">
-                            <h3>Start Your Orthodontic Journey</h3>
+                            <h3>Start Your Treatment Journey</h3>
                             <p>Book your consultation today and let our experts create a personalised treatment plan just for you.</p>
                         </div>
                     </div>
@@ -703,16 +695,16 @@
                 <i class="fa-solid fa-chevron-right"></i>
                 <a href="/icon-dental/treatments.php">Treatments</a>
                 <i class="fa-solid fa-chevron-right"></i>
-                <span class="current">Orthodontics</span>
+                <span class="current">Bone Grafting</span>
             </div>
 
             <!-- Hero Section -->
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="hero-label">ORTHODONTICS</div>
-                    <h1 class="hero-title">Straighter Teeth.<br>Healthier Smile.<br>Greater Confidence.</h1>
+                    <div class="hero-label">BONE GRAFTING</div>
+                    <h1 class="hero-title">Restoring Bone.<br>Building Foundations.<br>Securing Smiles.</h1>
                     <div class="hero-title-line"></div>
-                    <p class="hero-desc">Our orthodontic treatments are tailored to align your teeth, improve your bite and enhance your overall oral health with discreet, comfortable and effective solutions.</p>
+                    <p class="hero-desc">Our bone grafting treatments are designed to rebuild jawbone structure, providing a strong, healthy foundation for dental implants and restoring your natural facial contours.</p>
                     
                     <div class="feature-grid">
                         <div class="feature-item">
@@ -745,14 +737,6 @@
                         </div>
                     </div>
 
-                    <div class="btn-group-custom d-flex gap-3 mt-2">
-                        <a href="#" class="btn-primary-dark" style="background: #b1986f; color: #173a28;">
-                            Book a Consultation <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                        <a href="#" class="btn-outline-gold">
-                            Explore Options <div class="btn-icon-circle"><i class="fa-solid fa-arrow-right"></i></div>
-                        </a>
-                    </div>
                 </div>
 
                 <div class="col-lg-6">
@@ -772,12 +756,12 @@
             <!-- Treatments Section -->
             <section class="treatments-section">
                 <div class="section-header">
-                    <div class="tooth-icon"><i class="fa-solid fa-tooth"></i></div>
-                    <h2 class="section-title">Our Orthodontic Treatments</h2>
+
+                    <h2 class="section-title">Our Bone Grafting Procedures</h2>
                 </div>
 
                 <div class="cards-grid">
-                    <a href="#" class="treatment-card">
+                    <a href="#" class="treatment-card" data-bs-toggle="modal" data-bs-target="#treatmentModal" onclick="event.preventDefault(); populateModal(this)">
                         <div class="card-img-wrapper">
                             <img src="../assets/images/invisalign-treatment.jpg" alt="Invisalign">
                         </div>
@@ -786,7 +770,7 @@
                         <div class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
                     </a>
                     
-                    <a href="#" class="treatment-card">
+                    <a href="#" class="treatment-card" data-bs-toggle="modal" data-bs-target="#treatmentModal" onclick="event.preventDefault(); populateModal(this)">
                         <div class="card-img-wrapper">
                             <img src="../assets/images/metal-braces.jpg" alt="Metal Braces">
                         </div>
@@ -795,7 +779,7 @@
                         <div class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
                     </a>
 
-                    <a href="#" class="treatment-card">
+                    <a href="#" class="treatment-card" data-bs-toggle="modal" data-bs-target="#treatmentModal" onclick="event.preventDefault(); populateModal(this)">
                         <div class="card-img-wrapper">
                             <img src="../assets/images/ceramic-braces.jpg" alt="Ceramic Braces">
                         </div>
@@ -804,7 +788,7 @@
                         <div class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
                     </a>
 
-                    <a href="#" class="treatment-card">
+                    <a href="#" class="treatment-card" data-bs-toggle="modal" data-bs-target="#treatmentModal" onclick="event.preventDefault(); populateModal(this)">
                         <div class="card-img-wrapper">
                             <img src="../assets/images/lingual-braces.jpg" alt="Lingual Braces">
                         </div>
@@ -813,7 +797,7 @@
                         <div class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
                     </a>
 
-                    <a href="#" class="treatment-card">
+                    <a href="#" class="treatment-card" data-bs-toggle="modal" data-bs-target="#treatmentModal" onclick="event.preventDefault(); populateModal(this)">
                         <div class="card-img-wrapper">
                             <img src="../assets/images/early-orthodontics.jpg" alt="Early Orthodontics">
                         </div>
@@ -822,7 +806,7 @@
                         <div class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
                     </a>
 
-                    <a href="#" class="treatment-card">
+                    <a href="#" class="treatment-card" data-bs-toggle="modal" data-bs-target="#treatmentModal" onclick="event.preventDefault(); populateModal(this)">
                         <div class="card-img-wrapper">
                             <img src="../assets/images/retainers.jpg" alt="Retainers">
                         </div>
@@ -837,7 +821,7 @@
                     <div class="cta-left">
                         <div class="cta-icon"><i class="fa-regular fa-calendar-check"></i></div>
                         <div class="cta-text">
-                            <h3>Start Your Orthodontic Journey</h3>
+                            <h3>Start Your Treatment Journey</h3>
                             <p>Book your consultation today and let our experts create a personalised treatment plan just for you.</p>
                         </div>
                     </div>
@@ -866,7 +850,102 @@
                 }
             });
         });
+        function populateModal(element) {
+            const title = element.querySelector('h3').innerText;
+            const desc = element.querySelector('p').innerText;
+            const imgUrl = element.querySelector('img').src;
+            
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc + " We offer comprehensive procedures tailored to your needs. During your consultation, we will assess your oral health and provide a customized treatment plan.";
+            document.getElementById('modalImg').src = imgUrl;
+        }
     </script>
+    
+    <!-- Treatment Modal -->
+    <style>
+        /* Light Theme Modal Defaults */
+        #treatmentModal .modal-content {
+            background-color: #ffffff;
+            border-radius: 18px;
+            border: none;
+            overflow: hidden;
+        }
+        #treatmentModal .modal-header, #treatmentModal .modal-footer {
+            background-color: #faf9f6;
+            border-color: #ececec;
+        }
+        #treatmentModal .modal-title {
+            font-family: var(--heading-font);
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        #treatmentModal .btn-close {
+            filter: none;
+        }
+        #treatmentModal #modalDesc {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
+            padding: 0 10px;
+        }
+        #treatmentModal .image-wrapper {
+            width: 140px; height: 140px; margin: 0 auto 24px;
+            border-radius: 50%; overflow: hidden;
+            border: 2px solid #f1f1f1;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        /* Dark Theme Modal Overrides */
+        body.dark-theme #treatmentModal .modal-content {
+            background-color: #232f28; /* slightly darker to match the theme */
+        }
+        body.dark-theme #treatmentModal .modal-header,
+        body.dark-theme #treatmentModal .modal-footer {
+            background-color: #1c2620; /* darker header/footer */
+            border-color: #3b4d42;
+        }
+        body.dark-theme #treatmentModal .modal-title {
+            color: #d8c3a5; /* Gold text */
+        }
+        body.dark-theme #treatmentModal #modalDesc {
+            color: #aebdb5;
+        }
+        body.dark-theme #treatmentModal .btn-close {
+            filter: invert(1) grayscale(100%) brightness(200%);
+        }
+        body.dark-theme #treatmentModal .image-wrapper {
+            border-color: #3b4d42;
+        }
+        body.dark-theme #treatmentModal .modal-footer .btn-primary-dark {
+            background: #b1986f; 
+            color: #173a28;
+            border: none;
+        }
+        body.dark-theme #treatmentModal .modal-footer .btn-primary-dark:hover {
+            background: #d8c3a5;
+        }
+    </style>
+    <div class="modal fade" id="treatmentModal" tabindex="-1" aria-labelledby="treatmentModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalTitle">Treatment Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center p-4">
+            <div class="image-wrapper">
+                <img id="modalImg" src="" alt="Treatment Image" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <p id="modalDesc"></p>
+          </div>
+          <div class="modal-footer" style="justify-content: center; padding: 20px;">
+            <a href="/icon-dental/book-online.php" class="btn-primary-dark" style="text-decoration: none;">Book a Consultation <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/icon-dental/includes/footer.php'; ?>
 </body>
 </html>

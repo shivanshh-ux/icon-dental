@@ -747,7 +747,7 @@ if (!isset($current_page)) {
                 <a href="/icon-dental/treatments.php" class="pgn-dropdown-item">View All Treatments</a>
                 <a href="/icon-dental/treatments/general-dentistry.php" class="pgn-dropdown-item">General Dentistry</a>
                 <a href="/icon-dental/treatments/cosmetic-dentistry.php" class="pgn-dropdown-item">Cosmetic Dentistry</a>
-                <a href="/icon-dental/treatments/orthodontics.php" class="pgn-dropdown-item">Orthodontics</a>
+                <a href="/icon-dental/treatments/bone-grafting.php" class="pgn-dropdown-item">Bone Grafting</a>
                 <a href="/icon-dental/treatments.php#implants" class="pgn-dropdown-item">Dental Implants</a>
             </div>
         </div>
@@ -838,7 +838,7 @@ if (!isset($current_page)) {
         <div class="pgn-mobile-submenu">
             <a href="/icon-dental/treatments/general-dentistry.php" class="pgn-mobile-subitem">General Dentistry</a>
             <a href="/icon-dental/treatments/cosmetic-dentistry.php" class="pgn-mobile-subitem">Cosmetic Dentistry</a>
-            <a href="/icon-dental/treatments/orthodontics.php" class="pgn-mobile-subitem">Orthodontics</a>
+            <a href="/icon-dental/treatments/bone-grafting.php" class="pgn-mobile-subitem">Bone Grafting</a>
             <a href="/icon-dental/treatments.php#implants" class="pgn-mobile-subitem">Dental Implants</a>
         </div>
     </div>

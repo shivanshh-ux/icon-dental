@@ -391,7 +391,7 @@ if ($currentDay >= 1 && $currentDay <= 3) {
                 <ul class="footer-links">
                     <li><a href="/icon-dental/treatments.php#general" class="footer-link-item">General Dentistry</a></li>
                     <li><a href="/icon-dental/treatments.php#cosmetic" class="footer-link-item">Cosmetic Dentistry</a></li>
-                    <li><a href="/icon-dental/treatments.php#orthodontics" class="footer-link-item">Orthodontics</a></li>
+                    <li><a href="/icon-dental/treatments/bone-grafting.php" class="footer-link-item">Bone Grafting</a></li>
                     <li><a href="/icon-dental/treatments.php#implants" class="footer-link-item">Dental Implants</a></li>
                     <li><a href="/icon-dental/treatments.php#emergency" class="footer-link-item">Emergency Care</a></li>
                 </ul>
