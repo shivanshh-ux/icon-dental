@@ -352,7 +352,7 @@
         body.dark-theme h1, body.dark-theme h2, body.dark-theme h3,
         body.dark-theme h4, body.dark-theme h5, body.dark-theme h6,
         body.dark-theme .brand-text { color: #ffffff; }
-        body.dark-theme .hero-section { background: linear-gradient(135deg, #2c352a 0%, #3f4b3d 100%); }
+        body.dark-theme .hero-section { background: transparent; }
         body.dark-theme .hero-title { background: linear-gradient(to right, #ffffff, #d6c09b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         body.dark-theme .hero-desc { color: rgba(255,255,255,0.8); }
         body.dark-theme .hero-list li { color: rgba(255,255,255,0.9); }
@@ -377,7 +377,7 @@
         body.dark-theme .why-choose-card .feature-text { color: #cbd5e1; }
 
         /* ---- Smile Makeover section dark mode ---- */
-        body.dark-theme .section-light-bg { background: rgba(44, 53, 42, 0.6) !important; }
+        body.dark-theme .section-light-bg { background: transparent !important; }
         body.dark-theme .makeover-pill {
             background: rgba(73, 87, 70, 0.7);
             border-color: rgba(177, 152, 111, 0.25);
@@ -389,6 +389,171 @@
             border-color: rgba(177, 152, 111, 0.5);
         }
         body.dark-theme .makeover-pill i { color: #d6c09b; }
+
+        /* Premium Welcome Section */
+        .welcome-title.text-start {
+            text-align: left !important;
+            font-size: 48px;
+            margin-bottom: 24px;
+        }
+
+        .welcome-text-content {
+            text-align: left;
+        }
+
+        .welcome-text-content .lead-text {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--dark-navy);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-family: var(--heading-font);
+        }
+
+        .welcome-text-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .highlight-quote {
+            background: linear-gradient(135deg, rgba(177, 152, 111, 0.1), rgba(177, 152, 111, 0.02));
+            border-left: 4px solid var(--primary-blue);
+            padding: 24px;
+            border-radius: 0 16px 16px 0;
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .highlight-quote i {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            font-size: 24px;
+            color: var(--primary-blue);
+            background: #ffffff;
+            padding: 0 10px;
+            transition: background 0.3s ease;
+        }
+
+        .highlight-quote p {
+            margin: 0;
+            font-family: var(--heading-font);
+            font-size: 20px;
+            color: var(--dark-navy);
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .welcome-contact-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .welcome-contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--primary-blue);
+        }
+
+        .wcc-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(177, 152, 111, 0.1);
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin: 0 auto 24px;
+        }
+
+        .wcc-title {
+            font-family: var(--heading-font);
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--dark-navy);
+            margin-bottom: 16px;
+        }
+
+        .wcc-desc {
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .wcc-number-wrapper {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .wcc-label {
+            display: block;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-gray);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .wcc-number {
+            display: inline-block;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+            letter-spacing: 1px;
+            font-family: var(--body-font);
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .wcc-number:hover {
+            transform: scale(1.05);
+            color: var(--primary-hover);
+        }
+
+        /* Dark mode overrides for new section */
+        body.dark-theme .welcome-text-content .lead-text { color: #ffffff; }
+        body.dark-theme .welcome-text-content p { color: rgba(255,255,255,0.75); text-align: left; }
+        body.dark-theme .highlight-quote {
+            background: rgba(177, 152, 111, 0.05);
+        }
+        body.dark-theme .highlight-quote i {
+            background: #2c352a; 
+        }
+        body.dark-theme .highlight-quote p {
+            color: #d6c09b;
+        }
+        body.dark-theme .welcome-contact-card {
+            background: rgba(44, 53, 42, 0.85);
+            border-color: rgba(255,255,255,0.1);
+        }
+        body.dark-theme .wcc-title { color: #ffffff; }
+        body.dark-theme .wcc-desc { color: rgba(255,255,255,0.75); }
+        body.dark-theme .wcc-number-wrapper {
+            background: rgba(0,0,0,0.2);
+            border-color: rgba(255,255,255,0.05);
+        }
+        body.dark-theme .wcc-label { color: rgba(255,255,255,0.5); }
+        body.dark-theme .wcc-number { color: #d6c09b; }
 
         /* ---- Emergency card dark mode ---- */
         body.dark-theme .emergency-card {
@@ -464,10 +629,10 @@
                     </ul>
 
                     <div class="btn-group-custom d-flex gap-3 hero-actions">
-                        <a href="#" class="btn-primary-custom px-4 py-3" style="font-size: 16px;">
+                        <a href="/icon-dental/book-online.php" class="btn-primary-custom px-4 py-3" style="font-size: 16px;">
                             <i class="fa-regular fa-calendar-check"></i> Book Appointment
                         </a>
-                        <a href="#" class="btn-outline-custom px-4 py-3" style="font-size: 16px;">
+                        <a href="/icon-dental/treatments.php" class="btn-outline-custom px-4 py-3" style="font-size: 16px;">
                             Explore Treatments <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
@@ -484,85 +649,119 @@
     <!-- Welcome Section -->
     <section class="section-padding">
         <div class="container custom-container">
-            <div class="row align-items-center g-5 mb-5">
-                <div class="col-lg-12 text-center">
-                    <h2 class="welcome-title">Welcome to<br>Icon Dental Wembley</h2>
-                    <p class="welcome-desc mx-auto" style="max-width: 800px;">At Icon Dental Wembley, we believe dentistry should be comfortable, transparent, and tailored to every patient. Our highly experienced team combines advanced technology with a patient-first approach to provide outstanding dental care for individuals and families across Wembley and surrounding areas.</p>
-                    <p class="welcome-desc mx-auto fw-bold" style="max-width: 800px;">From maintaining healthy teeth and gums to transforming smiles through cosmetic dentistry, our mission is simple: Creating healthy, confident smiles that last a lifetime.</p>
+            <div class="row align-items-center g-5 mb-5 premium-welcome-section">
+                <div class="col-lg-7">
+                    <h2 class="welcome-title text-start mb-4">Welcome to<br>Ealing Road Dental Centre</h2>
+                    
+                    <div class="welcome-text-content">
+                        <p class="lead-text">Established over 60 years ago, Ealing Road Dental Centre is a thriving mixed NHS and Private practice located in the heart of Wembley.</p>
+                        
+                        <p>Under the leadership of Principal Dentist <strong>Dr Abbas Arbabi</strong>, our team has proudly delivered holistic, patient-centred care for over 22 years. We believe in combining advanced technology with a compassionate approach, attracting a diverse community of patients who trust us with their smiles.</p>
+                        
+                        <p>Our commitment to excellence means we constantly update our knowledge and techniques. From routine dentistry to advanced aesthetics, we offer a broad spectrum of treatments. For complex cases, we provide seamless referral pathways to consultant specialists across both NHS and private sectors.</p>
+                        
+                        <div class="highlight-quote">
+                            <i class="fa-solid fa-quote-left"></i>
+                            <p>Dr Abbas Arbabi is highly skilled in Implant Surgery, Aesthetic Dentistry, and comprehensive Smile Makeovers.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-5">
+                    <div class="welcome-contact-card">
+                        <div class="wcc-icon">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+                        <h3 class="wcc-title">Ready to transform your smile?</h3>
+                        <p class="wcc-desc">Experience the highest quality in modern dentistry. Book your appointment today and let our expert team take care of you.</p>
+                        
+                        <div class="wcc-number-wrapper">
+                            <span class="wcc-label">Call our team directly</span>
+                            <a href="tel:02089983030" class="wcc-number">0208 998 3030</a>
+                        </div>
+                        
+                        <a href="/icon-dental/book-online.php" class="btn-primary-custom w-100 mt-4">
+                            <i class="fa-regular fa-calendar-check"></i> Book Online Now
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- 4 CORE SERVICE BLOCKS -->
-            <div class="row g-4 mt-4">
+            <!-- DENTAL SERVICES -->
+            <div class="text-center mt-5 mb-4">
+                <h3 class="welcome-title" style="font-size: 32px;">Some of our dental services include</h3>
+            </div>
+            <div class="row g-4 justify-content-center">
                 <!-- Service 1 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card p-4">
-                        <div class="service-icon mb-3" style="position: static; box-shadow: none;">
-                            <i class="fa-solid fa-tooth" style="font-size: 32px; color: var(--primary-blue);"></i>
+                <div class="col-md-4 col-lg-3">
+                    <div class="service-card p-4 text-center">
+                        <div class="service-icon mb-3 mx-auto" style="position: static; box-shadow: none;">
+                            <i class="fa-solid fa-hands-bubbles" style="font-size: 32px; color: var(--primary-blue);"></i>
                         </div>
-                        <h3 class="service-title mb-3">Check My Teeth</h3>
-                        <p class="feature-text mb-3">Regular dental examinations and professional hygiene appointments help prevent dental problems before they become serious.</p>
-                        <ul style="list-style: none; padding: 0; font-size: 14px; color: var(--text-gray);">
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Dental Check-ups</li>
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Digital X-rays</li>
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Gum Health Assessments</li>
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Scale & Polish</li>
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Airflow Cleaning</li>
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Oral Cancer Screening</li>
-                        </ul>
+                        <h3 class="service-title">Hygienist</h3>
                     </div>
                 </div>
                 <!-- Service 2 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card p-4">
-                        <div class="service-icon mb-3" style="position: static; box-shadow: none;">
-                            <i class="fa-solid fa-screwdriver-wrench" style="font-size: 32px; color: var(--primary-blue);"></i>
+                <div class="col-md-4 col-lg-3">
+                    <div class="service-card p-4 text-center">
+                        <div class="service-icon mb-3 mx-auto" style="position: static; box-shadow: none;">
+                            <i class="fa-regular fa-sun" style="font-size: 32px; color: var(--primary-blue);"></i>
                         </div>
-                        <h3 class="service-title mb-3">Repair My Teeth</h3>
-                        <p class="feature-text mb-3">Restore the health, function, and appearance of damaged teeth with advanced restorative techniques.</p>
-                        <ul style="list-style: none; padding: 0; font-size: 14px; color: var(--text-gray);">
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> White Fillings</li>
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Root Canal Treatment</li>
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Crowns & Bridges</li>
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Inlays & Onlays</li>
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Emergency Dentistry</li>
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Tooth-Coloured Restorations</li>
-                        </ul>
+                        <h3 class="service-title">Tooth Whitening</h3>
                     </div>
                 </div>
                 <!-- Service 3 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card p-4">
-                        <div class="service-icon mb-3" style="position: static; box-shadow: none;">
-                            <i class="fa-solid fa-teeth-open" style="font-size: 32px; color: var(--primary-blue);"></i>
+                <div class="col-md-4 col-lg-3">
+                    <div class="service-card p-4 text-center">
+                        <div class="service-icon mb-3 mx-auto" style="position: static; box-shadow: none;">
+                            <i class="fa-solid fa-users" style="font-size: 32px; color: var(--primary-blue);"></i>
                         </div>
-                        <h3 class="service-title mb-3">Replace My Teeth</h3>
-                        <p class="feature-text mb-3">We offer modern tooth replacement solutions that look natural and feel comfortable for missing teeth.</p>
-                        <ul style="list-style: none; padding: 0; font-size: 14px; color: var(--text-gray);">
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Dental Implants</li>
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Implant Bridges</li>
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Implant Dentures</li>
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Fixed Bridges</li>
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Full Smile Rehabilitation</li>
-                        </ul>
+                        <h3 class="service-title">Family and general dentistry</h3>
                     </div>
                 </div>
                 <!-- Service 4 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card p-4">
-                        <div class="service-icon mb-3" style="position: static; box-shadow: none;">
+                <div class="col-md-4 col-lg-3">
+                    <div class="service-card p-4 text-center">
+                        <div class="service-icon mb-3 mx-auto" style="position: static; box-shadow: none;">
+                            <i class="fa-regular fa-face-smile" style="font-size: 32px; color: var(--primary-blue);"></i>
+                        </div>
+                        <h3 class="service-title">Invisalign</h3>
+                    </div>
+                </div>
+                <!-- Service 5 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="service-card p-4 text-center">
+                        <div class="service-icon mb-3 mx-auto" style="position: static; box-shadow: none;">
+                            <i class="fa-solid fa-crown" style="font-size: 32px; color: var(--primary-blue);"></i>
+                        </div>
+                        <h3 class="service-title">Bridges & Crowns</h3>
+                    </div>
+                </div>
+                <!-- Service 6 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="service-card p-4 text-center">
+                        <div class="service-icon mb-3 mx-auto" style="position: static; box-shadow: none;">
+                            <i class="fa-solid fa-wand-magic-sparkles" style="font-size: 32px; color: var(--primary-blue);"></i>
+                        </div>
+                        <h3 class="service-title">Bonding</h3>
+                    </div>
+                </div>
+                <!-- Service 7 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="service-card p-4 text-center">
+                        <div class="service-icon mb-3 mx-auto" style="position: static; box-shadow: none;">
                             <i class="fa-regular fa-face-smile-beam" style="font-size: 32px; color: var(--primary-blue);"></i>
                         </div>
-                        <h3 class="service-title mb-3">Enhance My Teeth</h3>
-                        <p class="feature-text mb-3">Our cosmetic dental treatments are designed to create beautiful, natural-looking results.</p>
-                        <ul style="list-style: none; padding: 0; font-size: 14px; color: var(--text-gray);">
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Invisalign</li>
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Composite Bonding</li>
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Teeth Whitening</li>
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Porcelain Veneers</li>
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Smile Makeovers</li>
-                            <li><i class="fa-solid fa-angle-right" style="color:var(--primary-blue); margin-right:5px;"></i> Gum Contouring</li>
-                        </ul>
+                        <h3 class="service-title">Cosmetic Dentistry</h3>
+                    </div>
+                </div>
+                <!-- Service 8 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="service-card p-4 text-center">
+                        <div class="service-icon mb-3 mx-auto" style="position: static; box-shadow: none;">
+                            <i class="fa-solid fa-screwdriver-wrench" style="font-size: 32px; color: var(--primary-blue);"></i>
+                        </div>
+                        <h3 class="service-title">Implants</h3>
                     </div>
                 </div>
             </div>
@@ -687,7 +886,7 @@
                             <span class="emergency-badge">Dental Trauma</span>
                             <span class="emergency-badge">Infection</span>
                         </div>
-                        <a href="tel:+447903584600" class="btn-primary-custom emergency-btn">Call For Emergency Appointment</a>
+                        <a href="tel:02089983030" class="btn-primary-custom emergency-btn">Call For Emergency Appointment</a>
                     </div>
                 </div>
             </div>

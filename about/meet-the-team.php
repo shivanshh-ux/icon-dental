@@ -1,4 +1,4 @@
-﻿
+
 <?php
 // about/meet-the-team.php
 ?>
@@ -319,15 +319,21 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            height: 520px;
+            height: auto;
             width: 100%;
         }
         
         .hero-image-wrapper img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            display: block;
+            object-fit: contain;
         }
+
+        body.light-theme .img-dark { display: none !important; }
+        body.light-theme .img-light { display: block !important; }
+        body.dark-theme .img-light { display: none !important; }
+        body.dark-theme .img-dark { display: block !important; }
 
         /* Section Title */
         .explore-heading-wrapper {
@@ -355,7 +361,7 @@
         /* Team Grid */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 24px;
         }
 
@@ -793,7 +799,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="hero-image-wrapper">
-                        <img src="../assets/images/team/hero.png" alt="Dental Clinic Team" class="about-image">
+                        <img src="../assets/images/about-us-light.png" alt="Dental Clinic Team" class="about-image img-light">
+                        <img src="../assets/images/about-us-dark.png" alt="Dental Clinic Team" class="about-image img-dark">
                     </div>
                 </div>
             </div>
@@ -813,64 +820,28 @@
             <div class="team-grid">
                 <!-- Card 1 -->
                 <div class="team-card">
-                    <img src="../assets/images/team/michael.png" alt="Dr. Michael Johnson" class="team-card-img">
                     <div class="team-card-content">
-                        <h3 class="team-name">Dr. Michael Johnson</h3>
-                        <div class="team-role">Principal Dentist</div>
-                        <p class="team-desc">Over 15 years of experience in general and cosmetic dentistry with a passion for smile makeovers.</p>
-                        <div class="team-skills">
-                            <div class="team-skill-icon"><i class="fa-regular fa-gem"></i></div>
-                            <div class="team-skill-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                            <div class="team-skill-icon"><i class="fa-solid fa-notes-medical"></i></div>
-                        </div>
-                        <a href="#" class="team-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+                        <h3 class="team-name">Dr Abbas Arbabi</h3>
+                        <div class="team-role">DDS Oral Implant Surgeon</div>
+                        <p class="team-desc">GDC: 75201</p>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="team-card">
-                    <img src="../assets/images/team/sarah.png" alt="Dr. Sarah Nguyen" class="team-card-img">
                     <div class="team-card-content">
-                        <h3 class="team-name">Dr. Sarah Nguyen</h3>
-                        <div class="team-role">Associate Dentist</div>
-                        <p class="team-desc">Gentle and caring approach with expertise in preventive and family dentistry.</p>
-                        <div class="team-skills">
-                            <div class="team-skill-icon"><i class="fa-regular fa-gem"></i></div>
-                            <div class="team-skill-icon"><i class="fa-solid fa-notes-medical"></i></div>
-                            <div class="team-skill-icon"><i class="fa-regular fa-star"></i></div>
-                        </div>
-                        <a href="#" class="team-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+                        <h3 class="team-name">Sara Moshtofar</h3>
+                        <div class="team-role">Dental Hygienist</div>
+                        <p class="team-desc">GDC: 281632</p>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="team-card">
-                    <img src="../assets/images/team/emily.png" alt="Dr. Emily Williams" class="team-card-img">
                     <div class="team-card-content">
-                        <h3 class="team-name">Dr. Emily Williams</h3>
-                        <div class="team-role">Cosmetic Dentist</div>
-                        <p class="team-desc">Specialist in smile makeovers, veneers and aesthetic dental treatments.</p>
-                        <div class="team-skills">
-                            <div class="team-skill-icon"><i class="fa-regular fa-gem"></i></div>
-                            <div class="team-skill-icon"><i class="fa-solid fa-notes-medical"></i></div>
-                        </div>
-                        <a href="#" class="team-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="team-card">
-                    <img src="../assets/images/team/sophie.png" alt="Sophie Lee" class="team-card-img">
-                    <div class="team-card-content">
-                        <h3 class="team-name">Sophie Lee</h3>
-                        <div class="team-role">Hygienist</div>
-                        <p class="team-desc">Dedicated to helping patients achieve optimal oral health and confident smiles.</p>
-                        <div class="team-skills">
-                            <div class="team-skill-icon"><i class="fa-regular fa-gem"></i></div>
-                            <div class="team-skill-icon"><i class="fa-solid fa-notes-medical"></i></div>
-                            <div class="team-skill-icon"><i class="fa-regular fa-user"></i></div>
-                        </div>
-                        <a href="#" class="team-link">View Profile <i class="fa-solid fa-arrow-right"></i></a>
+                        <h3 class="team-name">Btisam Serbout</h3>
+                        <div class="team-role">Dental Hygienist</div>
+                        <p class="team-desc">GDC: 243637</p>
                     </div>
                 </div>
             </div>
@@ -888,7 +859,7 @@
                 </div>
                 <div class="cta-right">
                     <a href="#" class="btn-outline-custom">Learn More</a>
-                    <a href="#" class="btn-primary-custom">
+                    <a href="/icon-dental/book-online.php" class="btn-primary-custom">
                         <i class="fa-regular fa-calendar"></i> Book Online
                     </a>
                 </div>

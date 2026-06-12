@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // about.php
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
@@ -289,15 +289,22 @@ header("Expires: -1");
         .hero-image-wrapper {
             border-radius: 24px;
             overflow: hidden;
-            height: 500px;
+            height: auto;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            width: 100%;
         }
 
         .hero-image-wrapper img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            display: block;
+            object-fit: contain;
         }
+
+        body.light-theme .img-dark { display: none !important; }
+        body.light-theme .img-light { display: block !important; }
+        body.dark-theme .img-light { display: none !important; }
+        body.dark-theme .img-dark { display: block !important; }
 
         /* Stats Section */
         .stats-section {
@@ -769,7 +776,8 @@ header("Expires: -1");
                 </div>
                 <div class="col-lg-6">
                     <div class="hero-image-wrapper">
-                        <img src="assets/images/reception.png" alt="Luxury Dental Clinic Reception">
+                        <img src="assets/images/about-us-light.png" alt="About Icon Dental" class="img-light">
+                        <img src="assets/images/about-us-dark.png" alt="About Icon Dental" class="img-dark">
                     </div>
                 </div>
             </div>
@@ -878,7 +886,7 @@ header("Expires: -1");
                     </div>
                 </div>
                 <div class="cta-right">
-                    <a href="#" class="btn-primary-custom">
+                    <a href="/icon-dental/book-online.php" class="btn-primary-custom">
                         <i class="fa-regular fa-calendar"></i> Book Online
                     </a>
                 </div>

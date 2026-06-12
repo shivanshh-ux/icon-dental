@@ -6,16 +6,10 @@ $currentDay = date('N'); // 1 (Mon) to 7 (Sun)
 $currentHour = (int)date('G');
 $isOpen = false;
 
-if ($currentDay >= 1 && $currentDay <= 2) {
-    if ($currentHour >= 9 && $currentHour < 18) $isOpen = true;
-} elseif ($currentDay == 3) {
-    if ($currentHour >= 9 && $currentHour < 20) $isOpen = true;
-} elseif ($currentDay == 4) {
-    if ($currentHour >= 9 && $currentHour < 18) $isOpen = true;
-} elseif ($currentDay == 5) {
+if ($currentDay >= 1 && $currentDay <= 3) {
     if ($currentHour >= 9 && $currentHour < 17) $isOpen = true;
-} elseif ($currentDay == 6) {
-    if ($currentHour >= 9 && $currentHour < 14) $isOpen = true;
+} elseif ($currentDay == 5) {
+    if ($currentHour >= 9 && $currentHour < 15) $isOpen = true;
 }
 ?>
 <style>
@@ -354,17 +348,21 @@ if ($currentDay >= 1 && $currentDay <= 2) {
             </a>
             
             <div class="footer-contact-row">
-                <a href="tel:+447903584600" class="footer-contact-item">
+                <a href="tel:02089983030" class="footer-contact-item">
                     <i class="fa-solid fa-phone"></i>
-                    <span>+44 7903 584600</span>
+                    <span>Tel: 0208 998 3030</span>
                 </a>
-                <a href="mailto:reception@icondentalwembley.co.uk" class="footer-contact-item">
+                <span class="footer-contact-item" style="cursor: default;">
+                    <i class="fa-solid fa-fax"></i>
+                    <span>Fax: 0208 998 4052</span>
+                </span>
+                <a href="mailto:info@ealingroaddental.co.uk" class="footer-contact-item">
                     <i class="fa-regular fa-envelope"></i>
-                    <span>reception@icondentalwembley.co.uk</span>
+                    <span>info@ealingroaddental.co.uk</span>
                 </a>
                 <div class="footer-contact-item">
                     <i class="fa-solid fa-location-dot"></i>
-                    <span>123 High Road, Wembley, HA9 6AA</span>
+                    <span>267A Ealing Road, Wembley, Middlesex, HA0 1EU</span>
                 </div>
             </div>
         </div>
@@ -409,12 +407,10 @@ if ($currentDay >= 1 && $currentDay <= 2) {
                     <?php endif; ?>
                 </h4>
                 <ul class="footer-hours">
-                    <li><span>Monday - Tuesday</span> <span>09:00 - 18:00</span></li>
-                    <li><span>Wednesday</span> <span>09:00 - 20:00</span></li>
-                    <li><span>Thursday</span> <span>09:00 - 18:00</span></li>
-                    <li><span>Friday</span> <span>09:00 - 17:00</span></li>
-                    <li><span>Saturday</span> <span>09:00 - 14:00</span></li>
-                    <li><span>Sunday</span> <span>Closed</span></li>
+                    <li><span>Monday - Wednesday</span> <span>09:00 - 17:00</span></li>
+                    <li><span>Thursday</span> <span>By Appointment Only</span></li>
+                    <li><span>Friday</span> <span>09:00 - 15:00</span></li>
+                    <li><span>Saturday - Sunday</span> <span>Closed</span></li>
                 </ul>
             </div>
 

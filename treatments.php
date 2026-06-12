@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // treatments.php
 ?>
 <!DOCTYPE html>
@@ -968,7 +968,7 @@
                     </div>
                 </div>
                 <div class="cta-actions">
-                    <a href="#" class="btn-primary-custom">
+                    <a href="/icon-dental/book-online.php" class="btn-primary-custom">
                         <i class="fa-regular fa-calendar"></i> Book Online
                     </a>
                     <a href="#" class="btn-outline-custom">

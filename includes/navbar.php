@@ -18,6 +18,91 @@ if (!isset($current_page)) {
     }
     /* Let the existing body.dark-theme in your pages handle the dark CSS */
 
+    /* Keyframes for Navbar Breathing Glow */
+    @keyframes navGlowDark {
+        0% {
+            box-shadow: 
+                0 0 0 1px rgba(255,255,255,.15) inset,
+                0 15px 40px rgba(0,0,0,.35),
+                0 0 20px rgba(177, 152, 111,.1),
+                0 0 40px rgba(177, 152, 111,.15);
+        }
+        100% {
+            box-shadow: 
+                0 0 0 1px rgba(255,255,255,.25) inset,
+                0 15px 40px rgba(0,0,0,.45),
+                0 0 50px rgba(177, 152, 111,.4),
+                0 0 100px rgba(177, 152, 111,.6);
+        }
+    }
+
+    @keyframes navGlowLight {
+        0% {
+            box-shadow: 
+                0 10px 30px rgba(0,0,0,0.1),
+                0 0 20px rgba(13, 44, 29, 0.2);
+        }
+        100% {
+            box-shadow: 
+                0 15px 35px rgba(0,0,0,0.2),
+                0 0 50px rgba(13, 44, 29, 0.6),
+                0 0 90px rgba(13, 44, 29, 0.4);
+        }
+    }
+
+    /* Keyframes for Image Sparkling Glow */
+    @keyframes imageGlowDark {
+        0% {
+            box-shadow: 
+                0 10px 30px rgba(0,0,0,0.3),
+                0 0 20px rgba(177, 152, 111, 0.15),
+                0 0 40px rgba(177, 152, 111, 0.2);
+        }
+        100% {
+            box-shadow: 
+                0 15px 40px rgba(0,0,0,0.4),
+                0 0 50px rgba(177, 152, 111, 0.4),
+                0 0 90px rgba(177, 152, 111, 0.6);
+        }
+    }
+
+    @keyframes imageGlowLight {
+        0% {
+            box-shadow: 
+                0 10px 30px rgba(0,0,0,0.1),
+                0 0 20px rgba(13, 44, 29, 0.2),
+                0 0 40px rgba(13, 44, 29, 0.1);
+        }
+        100% {
+            box-shadow: 
+                0 15px 35px rgba(0,0,0,0.2),
+                0 0 50px rgba(13, 44, 29, 0.5),
+                0 0 90px rgba(13, 44, 29, 0.35);
+        }
+    }
+
+    /* Apply Image Glow globally to image wrappers */
+    body.dark-theme .hero-image-wrapper,
+    body.dark-theme .t-img-container,
+    body.dark-theme .benefit-image-wrapper,
+    body.dark-theme .hero-image-container,
+    body.dark-theme .card-img-wrapper,
+    body.dark-theme .trans-img-container,
+    body.dark-theme img.why-image {
+        animation: imageGlowDark 2.5s infinite alternate ease-in-out;
+        border: 1px solid rgba(177, 152, 111, 0.2);
+    }
+
+    body.light-theme .hero-image-wrapper,
+    body.light-theme .t-img-container,
+    body.light-theme .benefit-image-wrapper,
+    body.light-theme .hero-image-container,
+    body.light-theme .card-img-wrapper,
+    body.light-theme .trans-img-container,
+    body.light-theme img.why-image {
+        animation: imageGlowLight 2.5s infinite alternate ease-in-out;
+    }
+
     /* Ultra Premium Glassmorphic Navbar Styles */
     .premium-glass-nav {
         width: 95%;
@@ -29,11 +114,7 @@ if (!isset($current_page)) {
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         border: 2px solid rgba(255,255,255,.35);
-        box-shadow: 
-            0 0 0 1px rgba(255,255,255,.15) inset,
-            0 15px 40px rgba(0,0,0,.35),
-            0 0 40px rgba(177, 152, 111,.15),
-            0 0 80px rgba(177, 152, 111,.25);
+        animation: navGlowDark 2.5s infinite alternate ease-in-out;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -281,7 +362,7 @@ if (!isset($current_page)) {
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         border: 2px solid rgba(255,255,255,.35);
-        box-shadow: 0 10px 30px rgba(0,0,0,.35), 0 0 30px rgba(177, 152, 111,.15);
+        animation: navGlowDark 2.5s infinite alternate ease-in-out;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -552,7 +633,11 @@ if (!isset($current_page)) {
 
     /* Light Theme Navbar Overrides */
     body.light-theme .premium-glass-nav,
-    body.light-theme .premium-glass-nav-mobile,
+    body.light-theme .premium-glass-nav-mobile {
+        background: rgba(255, 255, 255, 0.85);
+        border: 2px solid rgba(0, 0, 0, 0.05);
+        animation: navGlowLight 2.5s infinite alternate ease-in-out;
+    }
     body.light-theme .pgn-mobile-menu {
         background: rgba(255, 255, 255, 0.85);
         border: 2px solid rgba(0, 0, 0, 0.05);
@@ -695,7 +780,7 @@ if (!isset($current_page)) {
         </button>
 
         <!-- CTA Button -->
-        <a href="#" class="pgn-btn-book">
+        <a href="/icon-dental/book-online.php" class="pgn-btn-book">
             <i class="fa-regular fa-calendar" style="font-size:24px;"></i> 
             Book Online 
             <i class="fa-solid fa-arrow-right" style="font-size:20px;"></i>
@@ -777,7 +862,7 @@ if (!isset($current_page)) {
     <div class="pgn-mobile-divider"></div>
 
     <!-- Book Online button inside hamburger menu -->
-    <a href="#" class="pgn-mobile-book-btn">
+    <a href="/icon-dental/book-online.php" class="pgn-mobile-book-btn">
         <i class="fa-regular fa-calendar"></i>
         Book Online
         <i class="fa-solid fa-arrow-right"></i>

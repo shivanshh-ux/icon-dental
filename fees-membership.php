@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // fees-membership.php
 ?>
 <!DOCTYPE html>
@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fees & Membership - Icon Dental Wembley</title>
+    <title>Fee Guide - Icon Dental Wembley</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -501,6 +501,78 @@
             flex-shrink: 0;
         }
         
+        /* Fee Table Styles */
+        .custom-fee-table {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 0;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: 1px solid #e2e8f0;
+        }
+        .custom-fee-table thead th {
+            background: var(--light-bg);
+            color: var(--dark-navy);
+            font-family: var(--heading-font);
+            font-size: 20px;
+            font-weight: 600;
+            padding: 20px 24px;
+            border-bottom: 2px solid var(--primary-blue);
+            vertical-align: middle;
+        }
+        .custom-fee-table thead th i {
+            color: var(--primary-blue);
+            margin-right: 8px;
+        }
+        .custom-fee-table tbody td {
+            padding: 18px 24px;
+            vertical-align: middle;
+            color: var(--text-gray);
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .custom-fee-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .custom-fee-table tbody tr:hover td {
+            background: rgba(177, 152, 111, 0.05);
+        }
+        .custom-fee-table tbody td:first-child {
+            color: var(--dark-navy);
+            font-weight: 600;
+        }
+        
+        .badge-nhs {
+            background: rgba(0, 94, 184, 0.1);
+            color: #005EB8;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-block;
+        }
+        .badge-inc {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10B981;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-block;
+        }
+        .badge-lab {
+            background: rgba(245, 158, 11, 0.1);
+            color: #F59E0B;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
         /* --- DARK VERSION OVERRIDES --- */
         body.dark-theme {
             --light-bg: linear-gradient(135deg, #2c352a, #354032);
@@ -643,6 +715,40 @@
             filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
         }
 
+        body.dark-theme .custom-fee-table {
+            background: rgba(73, 87, 70,0.75) !important;
+            border-color: rgba(255,255,255,0.12);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            --bs-table-bg: transparent;
+            --bs-table-color: #fff;
+        }
+        body.dark-theme .custom-fee-table thead th {
+            background: rgba(255,255,255,0.05) !important;
+            color: #ffffff;
+            border-bottom-color: var(--primary-blue);
+        }
+        body.dark-theme .custom-fee-table tbody td {
+            border-bottom-color: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.8);
+            background-color: transparent !important;
+        }
+        body.dark-theme .custom-fee-table tbody tr:hover td {
+            background-color: rgba(255,255,255,0.05) !important;
+        }
+        body.dark-theme .custom-fee-table tbody td:first-child {
+            color: #ffffff;
+        }
+        body.dark-theme .badge-nhs {
+            background: rgba(64, 169, 255, 0.15);
+            color: #69b1ff;
+        }
+        body.dark-theme .alert-title {
+            color: #ffffff !important;
+        }
+        body.dark-theme .text-muted {
+            color: rgba(255,255,255,0.5) !important;
+        }
+
         /* Responsive Design */
         @media (max-width: 1199px) {
             .hero-title { font-size: 56px; }
@@ -685,13 +791,13 @@
     <section class="hero-section">
         <div class="container custom-container">
             <div class="breadcrumb-wrap mb-4">
-                <a href="index.php">Home</a> &gt; <span>Fees / Membership</span>
+                <a href="index.php">Home</a> &gt; <span>Fee Guide</span>
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <span class="hero-label">FEES & MEMBERSHIP</span>
+                    <span class="hero-label">PRIVATE TREATMENT FEE GUIDE</span>
                     <h2 class="hero-title">Quality Dental Care.<br>Simple, Transparent &<br>Great Value.</h2>
-                    <p class="hero-desc">Our membership plans are designed to make routine dental care affordable and stress-free. Join today and enjoy exclusive benefits for a healthier smile all year round.</p>
+                    <p class="hero-desc">Our fee guide provides simple, transparent pricing for all our private and NHS treatments.</p>
                     
                     <div class="hero-features">
                         <div class="hf-item">
@@ -702,24 +808,24 @@
                             </div>
                         </div>
                         <div class="hf-item">
-                            <div class="hf-icon"><i class="fa-regular fa-calendar"></i></div>
+                            <div class="hf-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
                             <div>
-                                <div class="hf-title">Preventive Focused</div>
-                                <p class="hf-desc">Keep your smile healthy.</p>
+                                <div class="hf-title">Great Value</div>
+                                <p class="hf-desc">Premium care at accessible prices.</p>
                             </div>
                         </div>
                         <div class="hf-item">
-                            <div class="hf-icon"><i class="fa-solid fa-users"></i></div>
+                            <div class="hf-icon"><i class="fa-solid fa-briefcase-medical"></i></div>
                             <div>
-                                <div class="hf-title">Exclusive Member Benefits</div>
-                                <p class="hf-desc">Save on treatments you may need.</p>
+                                <div class="hf-title">NHS & Private Options</div>
+                                <p class="hf-desc">Flexible care to suit your needs.</p>
                             </div>
                         </div>
                         <div class="hf-item">
-                            <div class="hf-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+                            <div class="hf-icon"><i class="fa-solid fa-star"></i></div>
                             <div>
-                                <div class="hf-title">Flexible & Easy</div>
-                                <p class="hf-desc">Simple to join, easy to manage.</p>
+                                <div class="hf-title">High Quality Materials</div>
+                                <p class="hf-desc">We use the best for your smile.</p>
                             </div>
                         </div>
                     </div>
@@ -739,142 +845,51 @@
     </section>
 
     <!-- Membership Plans Section -->
-    <section class="membership-section">
+    <!-- Fees Table Section -->
+    <section class="fees-section" style="padding: 90px 0; padding-bottom: 120px;">
         <div class="container custom-container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <h2 class="section-title">Membership Plans</h2>
-                    <div class="row g-4 align-items-stretch">
-                        <!-- Plan 1 -->
-                        <div class="col-md-4">
-                            <div class="plan-card">
-                                <h3 class="plan-title">Essential Plan</h3>
-                                <p class="plan-subtitle">Perfect for maintaining your oral health</p>
-                                <div class="plan-price">Â£14.99</div>
-                                <div class="plan-period">per month</div>
-                                <ul class="plan-features">
-                                    <li><i class="fa-solid fa-check"></i> 2 Routine Dental Examinations per year</li>
-                                    <li><i class="fa-solid fa-check"></i> 2 Hygiene Appointments per year</li>
-                                    <li><i class="fa-solid fa-check"></i> 10% Off Additional Treatments</li>
-                                    <li><i class="fa-solid fa-check"></i> Worldwide Dental Emergency Assistance</li>
-                                </ul>
-                                <a href="#" class="btn-outline-custom w-100">Join Essential</a>
-                            </div>
-                        </div>
-                        
-                        <!-- Plan 2 (Popular) -->
-                        <div class="col-md-4">
-                            <div class="plan-card popular">
-                                <div class="popular-badge">MOST POPULAR</div>
-                                <h3 class="plan-title">Comprehensive Plan</h3>
-                                <p class="plan-subtitle">Our most popular plan for complete care</p>
-                                <div class="plan-price">Â£24.99</div>
-                                <div class="plan-period">per month</div>
-                                <ul class="plan-features">
-                                    <li><i class="fa-solid fa-check"></i> 2 Routine Dental Examinations per year</li>
-                                    <li><i class="fa-solid fa-check"></i> 2 Hygiene Appointments per year</li>
-                                    <li><i class="fa-solid fa-check"></i> 15% Off Additional Treatments</li>
-                                    <li><i class="fa-solid fa-check"></i> Worldwide Dental Emergency Assistance</li>
-                                    <li><i class="fa-solid fa-check"></i> Priority Appointment Booking</li>
-                                </ul>
-                                <a href="#" class="btn-primary-custom w-100">Join Comprehensive</a>
-                            </div>
-                        </div>
-                        
-                        <!-- Plan 3 -->
-                        <div class="col-md-4">
-                            <div class="plan-card">
-                                <h3 class="plan-title">Premium Plan</h3>
-                                <p class="plan-subtitle">The ultimate plan for you and your family</p>
-                                <div class="plan-price">Â£34.99</div>
-                                <div class="plan-period">per month</div>
-                                <ul class="plan-features">
-                                    <li><i class="fa-solid fa-check"></i> 2 Routine Dental Examinations per year</li>
-                                    <li><i class="fa-solid fa-check"></i> 3 Hygiene Appointments per year</li>
-                                    <li><i class="fa-solid fa-check"></i> 20% Off Additional Treatments</li>
-                                    <li><i class="fa-solid fa-check"></i> Worldwide Dental Emergency Assistance</li>
-                                    <li><i class="fa-solid fa-check"></i> Priority Appointment Booking</li>
-                                    <li><i class="fa-solid fa-check"></i> Family Membership Benefits</li>
-                                </ul>
-                                <a href="#" class="btn-outline-custom w-100">Join Premium</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Sidebar -->
-                <div class="col-lg-4">
-                    <div style="height: 86px;" class="d-none d-lg-block"></div>
-                    <div class="benefits-sidebar">
-                        <h3 class="sidebar-title">All plans include:</h3>
-                        
-                        <div class="benefit-item">
-                            <div class="benefit-icon"><i class="fa-solid fa-shield"></i></div>
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Treatment Fee Guide</h2>
+                    <div class="section-desc" style="max-width: 800px; margin: 0 auto; background: rgba(177, 152, 111, 0.1); padding: 24px; border-radius: 12px; border-left: 4px solid var(--primary-blue); text-align: left;">
+                        <div style="display: flex; gap: 16px; align-items: flex-start;">
+                            <i class="fa-solid fa-circle-exclamation" style="color: var(--primary-blue); font-size: 24px; margin-top: 4px;"></i>
                             <div>
-                                <div class="benefit-title">Oral Health Support</div>
-                                <p class="benefit-desc">Professional advice when you need it.</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon"><i class="fa-solid fa-percent"></i></div>
-                            <div>
-                                <div class="benefit-title">Exclusive Discounts</div>
-                                <p class="benefit-desc">Save on a wide range of treatments.</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon"><i class="fa-regular fa-calendar"></i></div>
-                            <div>
-                                <div class="benefit-title">Flexible Payments</div>
-                                <p class="benefit-desc">Spread the cost with monthly payments.</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon"><i class="fa-solid fa-users"></i></div>
-                            <div>
-                                <div class="benefit-title">Easy to Join</div>
-                                <p class="benefit-desc">Sign up in minutes online or in practice.</p>
+                                <h4 style="margin: 0 0 8px 0; font-size: 18px; font-family: var(--body-font); font-weight: 600; color: var(--dark-navy);" class="alert-title">Important Appointment Information</h4>
+                                <p style="margin: 0; font-size: 15px; line-height: 1.6;">In order to book an appointment, a deposit of <strong>£100</strong> is required for all Private Dental Treatments.<br>Failure to cancel your Dental Hygiene appointment may result in a cancellation fee.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Special Offers -->
-            <div class="special-offers">
-                <div class="offers-left">
-                    <img src="https://cdn-icons-png.flaticon.com/512/4213/4213958.png" alt="Gift Box" class="gift-box">
-                    <div>
-                        <h3 class="offers-title">Special Offers for Members</h3>
-                        <p class="offers-desc">Enjoy exclusive savings and offers throughout the year, just for being a valued member.</p>
-                    </div>
-                </div>
-                <div class="offers-center">
-                    <div class="offer-feature">
-                        <div class="of-icon"><i class="fa-solid fa-certificate"></i></div>
-                        <div>
-                            <div class="of-title">Seasonal Discounts</div>
-                            <div class="of-desc">On selected treatments</div>
-                        </div>
-                    </div>
-                    <div class="offer-feature">
-                        <div class="of-icon"><i class="fa-solid fa-user-group"></i></div>
-                        <div>
-                            <div class="of-title">Refer a Friend</div>
-                            <div class="of-desc">Get rewards & savings</div>
-                        </div>
-                    </div>
-                    <div class="offer-feature">
-                        <div class="of-icon"><i class="fa-solid fa-cake-candles"></i></div>
-                        <div>
-                            <div class="of-title">Birthday Treat</div>
-                            <div class="of-desc">A special surprise for you!</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="offers-right">
-                    <a href="#" class="btn-primary-custom">View All Offers</a>
-                </div>
+
+            <div class="table-responsive">
+                <table class="table custom-fee-table">
+                    <thead>
+                        <tr>
+                            <th><i class="fa-solid fa-tooth"></i> Treatment Item</th>
+                            <th class="text-center"><i class="fa-solid fa-briefcase-medical"></i> NHS</th>
+                            <th class="text-center"><i class="fa-solid fa-star"></i> Private</th>
+                            <th class="text-center"><i class="fa-solid fa-shield-heart"></i> Denplan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>New Patient Consultation</td><td class="text-center"><span class="badge-nhs">NHS Fees Apply</span></td><td class="text-center">from £45.00</td><td class="text-center"><span class="badge-inc"><i class="fa-solid fa-check"></i> Included</span></td></tr>
+                        <tr><td>Routine Examination</td><td class="text-center"><span class="badge-nhs">NHS Fees Apply</span></td><td class="text-center">from £40.00</td><td class="text-center"><span class="badge-inc"><i class="fa-solid fa-check"></i> Included</span></td></tr>
+                        <tr><td>Xrays</td><td class="text-center"><span class="badge-nhs">NHS Fees Apply</span></td><td class="text-center">from £15 each</td><td class="text-center"><span class="badge-inc"><i class="fa-solid fa-check"></i> Included</span></td></tr>
+                        <tr><td>Fillings</td><td class="text-center"><span class="badge-nhs">NHS Fees Apply</span></td><td class="text-center">from £140**</td><td class="text-center"><span class="badge-inc"><i class="fa-solid fa-check"></i> Included</span></td></tr>
+                        <tr><td>Veneers</td><td class="text-center"><span class="badge-nhs">NHS Fees Apply</span></td><td class="text-center">from £900**</td><td class="text-center"><span class="badge-inc"><i class="fa-solid fa-check"></i> Included</span></td></tr>
+                        <tr><td>Root Canal Therapy</td><td class="text-center"><span class="badge-nhs">NHS Fees Apply</span></td><td class="text-center">from £350**</td><td class="text-center"><span class="text-muted"><i class="fa-solid fa-xmark"></i> Not Included</span></td></tr>
+                        <tr><td>Crowns and Bridges</td><td class="text-center"><span class="badge-nhs">NHS Fees Apply</span></td><td class="text-center">from £600**</td><td class="text-center"><span class="badge-lab">Lab fee only</span></td></tr>
+                        <tr><td>Inlays</td><td class="text-center"><span class="badge-nhs">NHS Fees Apply</span></td><td class="text-center">from £700**</td><td class="text-center"><span class="badge-lab">Lab fee only</span></td></tr>
+                        <tr><td>Extraction appointment</td><td class="text-center"><span class="badge-nhs">NHS Fees Apply</span></td><td class="text-center">from £250**</td><td class="text-center"><span class="badge-inc"><i class="fa-solid fa-check"></i> Included</span></td></tr>
+                        <tr><td>Gumshields</td><td class="text-center"><span class="text-muted">N/A</span></td><td class="text-center">£120</td><td class="text-center"><span class="badge-inc"><i class="fa-solid fa-check"></i> Included</span></td></tr>
+                        <tr><td>Dentures – per arch</td><td class="text-center"><span class="badge-nhs">NHS Fees Apply</span></td><td class="text-center">from £800</td><td class="text-center"><span class="badge-lab">Lab fee only</span></td></tr>
+                        <tr><td>Implant</td><td class="text-center"><span class="text-muted">N/A</span></td><td class="text-center">from £2000**</td><td class="text-center"><span class="badge-lab">fees on assessment only</span></td></tr>
+                        <tr><td>Hygienist Consultation</td><td class="text-center"><span class="text-muted">N/A</span></td><td class="text-center">£70</td><td class="text-center"><span class="badge-inc"><i class="fa-solid fa-check"></i> Included</span></td></tr>
+                    </tbody>
+                </table>
+                <p class="text-muted text-center mt-3" style="font-size: 13px;">** Starting prices. Final cost may vary based on individual assessment.</p>
             </div>
         </div>
     </section>
