@@ -107,7 +107,7 @@ if (!isset($current_page)) {
 </nav>
 
 <!-- Mobile Navigation - Logo + Theme Toggle + Hamburger ONLY -->
-<nav class="premium-glass-nav-mobile d-xl-none" style="position: sticky; top: 15px;">
+<nav class="premium-glass-nav-mobile d-xl-none" style="position: sticky; top: 15px; z-index: 9999;">
     <!-- Left: Hamburger -->
     <button class="pgn-mobile-toggle" id="pgnMobileToggle" aria-label="Open menu" style="margin-right: auto;">
         <i class="fa-solid fa-bars"></i>

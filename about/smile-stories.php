@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // about/smile-stories.php
 ?>
 <!DOCTYPE html>
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     
-    <link rel="stylesheet" href="/icon-dental/assets/css/style.css">
+    <link rel="stylesheet" href="/icon-dental/assets/css/style.css?v=2">
 </head>
 <body>
 
@@ -190,7 +190,7 @@
                     <div class="col-lg-5">
                         <div class="testi-left-content">
                             <i class="fa-solid fa-quote-left quote-icon-large"></i>
-                            <h2 class="testi-heading">Our patientsâ€™ happiness is our greatest achievement.</h2>
+                            <h2 class="testi-heading">Our patients’ happiness is our greatest achievement.</h2>
                             <p class="testi-desc">We're proud to be part of so many incredible smile journeys. Here's what our patients have to say.</p>
                         </div>
                     </div>
