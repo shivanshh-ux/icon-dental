@@ -20,607 +20,8 @@
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <style>
-        :root {
-            --primary-blue: #b1986f;
-            --primary-hover: #9f875e;
-            --dark-navy: #3f4b3d;
-            --light-bg: #f8fafc;
-            --text-gray: #64748b;
-            --border-color: #e2e8f0;
-            --heading-font: 'Cormorant Garamond', serif;
-            --body-font: 'Inter', sans-serif;
-            --shadow: 0 10px 30px rgba(0,0,0,.08);
-            --transition: all 0.3s ease;
-        }
-
-        body {
-            font-family: var(--body-font);
-            color: var(--text-gray);
-            background-color: #ffffff;
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        h1, h2, h3, h4, h5, h6, .brand-text {
-            font-family: var(--heading-font);
-            color: var(--dark-navy);
-            margin-bottom: 1rem;
-            transition: color 0.3s ease;
-        }
-
-        .section-padding { padding: 90px 0; }
-
-        .custom-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Buttons */
-        .btn-primary-custom {
-            background-color: var(--primary-blue);
-            color: #ffffff;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 500;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-            font-size: 15px;
-        }
-        .btn-primary-custom:hover {
-            background-color: var(--primary-hover);
-            color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(177, 152, 111, 0.2);
-        }
-
-        .btn-outline-custom {
-            background-color: transparent;
-            color: var(--dark-navy);
-            border: 1px solid var(--border-color);
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 500;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-            font-size: 15px;
-        }
-        .btn-outline-custom:hover {
-            border-color: var(--dark-navy);
-            color: var(--dark-navy);
-            background: var(--light-bg);
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section Enhancements */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes floatImage {
-            0% { transform: translateY(0px) perspective(1000px) rotateY(-5deg); }
-            50% { transform: translateY(-20px) perspective(1000px) rotateY(-5deg); }
-            100% { transform: translateY(0px) perspective(1000px) rotateY(-5deg); }
-        }
-        @keyframes pulseBg {
-            0% { transform: scale(1); opacity: 0.5; }
-            100% { transform: scale(1.1); opacity: 0.8; }
-        }
-        
-        .hero-section {
-            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
-            position: relative;
-            padding-top: 80px;
-            padding-bottom: 120px;
-            overflow: hidden;
-            transition: background 0.3s ease;
-        }
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(177, 152, 111, 0.08) 0%, transparent 50%);
-            animation: pulseBg 8s infinite alternate;
-            z-index: 0;
-            pointer-events: none;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        /* Hero Grid Alternative Layout */
-        .hero-grid-alternative {
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 70px;
-            align-items: center;
-        }
-
-        /* Left Side - Masonry Grid */
-        .hero-masonry {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            animation: fadeInUp 0.8s ease-out backwards;
-        }
-
-        .masonry-col {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .masonry-item-1 { height: 320px; border-radius: 24px; object-fit: cover; width: 100%; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-        .masonry-item-2 { height: 420px; border-radius: 24px; object-fit: cover; width: 100%; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-        .masonry-item-3 { height: 280px; border-radius: 24px; object-fit: cover; width: 100%; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-        .masonry-item-4 { height: 160px; border-radius: 24px; object-fit: cover; width: 100%; box-shadow: 0 15px 35px rgba(0,0,0,0.1); margin-top: auto; }
-
-        .hero-text-content {
-            animation: fadeInUp 0.8s ease-out 0.2s backwards;
-        }
-
-        .hero-badge {
-            background: linear-gradient(90deg, rgba(177,152,111,0.15), rgba(177,152,111,0.05));
-            color: var(--primary-hover);
-            padding: 8px 24px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 24px;
-            border: 1px solid rgba(177,152,111,0.3);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            box-shadow: 0 4px 15px rgba(177, 152, 111, 0.1);
-        }
-        .hero-title {
-            font-size: 64px;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            letter-spacing: -1.5px;
-            background: linear-gradient(to right, var(--dark-navy), var(--primary-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .hero-desc {
-            font-size: 18px;
-            line-height: 1.7;
-            margin-bottom: 32px;
-            max-width: 580px;
-            color: #475569;
-        }
-        .hero-actions {
-            margin-bottom: 0;
-        }
-
-        /* Features Section */
-        .features-section {
-            position: relative;
-            z-index: 10;
-            margin-top: -60px;
-        }
-        .features-inner {
-            background-color: #ffffff;
-            border-radius: 20px;
-            padding: 24px 32px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-        .feature-card { display: flex; align-items: flex-start; gap: 16px; height: 100%; }
-        .feature-icon-wrapper {
-            width: 48px; height: 48px; border-radius: 12px;
-            background-color: #eff6ff; color: var(--primary-blue);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 20px; flex-shrink: 0;
-        }
-        .feature-title { font-family: var(--body-font); font-size: 16px; font-weight: 600; margin-bottom: 6px; color: var(--dark-navy); }
-        .feature-text { font-size: 14px; margin: 0; line-height: 1.5; color: var(--text-gray); }
-
-        /* Welcome Section */
-        .welcome-title { font-size: 48px; font-weight: 600; margin-bottom: 24px; line-height: 1.2; }
-        .welcome-desc { font-size: 16px; line-height: 1.7; margin-bottom: 32px; }
-
-        /* Service Card */
-        .service-card {
-            background-color: #ffffff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 1px solid var(--border-color);
-            position: relative;
-            height: 100%;
-        }
-        .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,.1); }
-        .service-title { font-family: var(--body-font); font-size: 18px; font-weight: 600; margin: 0; color: var(--dark-navy); }
-
-        /* Why Choose Cards */
-        .why-choose-card {
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            transition: all 0.4s ease;
-            height: 100%;
-            border: 1px solid transparent;
-        }
-        .why-choose-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(177, 152, 111, 0.15);
-            border-color: rgba(177, 152, 111, 0.3);
-        }
-
-        /* Smile Makeover pill boxes */
-        .makeover-pill {
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 12px 16px;
-            text-align: center;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--dark-navy);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-        .makeover-pill:hover {
-            border-color: rgba(177,152,111,0.5);
-            box-shadow: 0 4px 15px rgba(177,152,111,0.15);
-        }
-        .makeover-pill i { color: var(--primary-blue); margin-right: 6px; }
-
-        /* Section that uses light-bg — needs dark mode override */
-        .section-light-bg {
-            background: var(--light-bg);
-            transition: background 0.3s ease;
-        }
-
-        /* Emergency Card */
-        .emergency-card {
-            background: white;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            border-radius: 12px;
-            padding: 3rem;
-            transition: all 0.3s ease;
-        }
-        .emergency-title { color: #b1986f; }
-        .emergency-btn {
-            width: 100%;
-            justify-content: center;
-            background: #b1986f !important;
-            border-color: #b1986f !important;
-            color: white !important;
-        }
-        .emergency-btn:hover { background: #9f875e !important; border-color: #9f875e !important; }
-
-        /* Emergency badges */
-        .emergency-badge {
-            display: inline-block;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 500;
-            background: #f1f5f9;
-            color: var(--dark-navy);
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        /* ===================== DARK THEME ===================== */
-        body.dark-theme {
-            background: linear-gradient(90deg, #3f4b3d, #495746, #3f4b3d);
-            color: rgba(255, 255, 255, 0.75);
-            --text-gray: #a0adb8;
-            --border-color: rgba(255,255,255,0.1);
-        }
-        body.dark-theme h1, body.dark-theme h2, body.dark-theme h3,
-        body.dark-theme h4, body.dark-theme h5, body.dark-theme h6,
-        body.dark-theme .brand-text { color: #ffffff; }
-        body.dark-theme .hero-section { background: transparent; }
-        body.dark-theme .hero-title { background: linear-gradient(to right, #ffffff, #d6c09b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        body.dark-theme .hero-desc { color: rgba(255,255,255,0.8); }
-        body.dark-theme .hero-list li { color: rgba(255,255,255,0.9); }
-        body.dark-theme .hero-badge { background: rgba(177, 152, 111, 0.15); color: #d6c09b; border-color: rgba(177,152,111,0.3); }
-        body.dark-theme .masonry-col img { box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 0 2px rgba(255,255,255,0.05); }
-        body.dark-theme .feature-title, body.dark-theme .service-title, body.dark-theme .review-text { color: #ffffff; }
-        body.dark-theme .feature-text { color: #cbd5e1; }
-        body.dark-theme .welcome-desc { color: rgba(255,255,255,0.75); }
-        body.dark-theme .btn-outline-custom { color: #ffffff; border-color: rgba(255, 255, 255, 0.3); }
-        body.dark-theme .btn-outline-custom:hover { background-color: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.5); }
-        body.dark-theme .features-inner { background-color: rgba(73, 87, 70, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-        body.dark-theme .feature-icon-wrapper { background-color: rgba(177, 152, 111, 0.2); color: #d6c09b; }
-        body.dark-theme .service-card { background-color: rgba(73, 87, 70, 0.6); border-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
-        body.dark-theme .service-icon { background-color: transparent; color: #d6c09b; box-shadow: none; }
-        body.dark-theme .service-card ul li { color: rgba(255, 255, 255, 0.65) !important; }
-        body.dark-theme .service-card p { color: rgba(255, 255, 255, 0.65) !important; }
-        body.dark-theme .service-card h3 { color: #ffffff !important; }
-        body.dark-theme .border-start { border-color: rgba(255, 255, 255, 0.1) !important; }
-        body.dark-theme .why-choose-card { background: rgba(73, 87, 70, 0.6); backdrop-filter: blur(10px); border-color: rgba(177, 152, 111, 0.15); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-        body.dark-theme .why-choose-card:hover { box-shadow: 0 15px 35px rgba(177, 152, 111, 0.25); border-color: rgba(177, 152, 111, 0.5); background: rgba(73, 87, 70, 0.85); }
-        body.dark-theme .why-choose-card .feature-title { color: #ffffff; }
-        body.dark-theme .why-choose-card .feature-text { color: #cbd5e1; }
-
-        /* ---- Smile Makeover section dark mode ---- */
-        body.dark-theme .section-light-bg { background: transparent !important; }
-        body.dark-theme .makeover-pill {
-            background: rgba(73, 87, 70, 0.7);
-            border-color: rgba(177, 152, 111, 0.25);
-            color: rgba(255,255,255,0.9);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        body.dark-theme .makeover-pill:hover {
-            background: rgba(73, 87, 70, 0.95);
-            border-color: rgba(177, 152, 111, 0.5);
-        }
-        body.dark-theme .makeover-pill i { color: #d6c09b; }
-
-        /* Premium Welcome Section */
-        .welcome-title.text-start {
-            text-align: left !important;
-            font-size: 48px;
-            margin-bottom: 24px;
-        }
-
-        .welcome-text-content {
-            text-align: left;
-        }
-
-        .welcome-text-content .lead-text {
-            font-size: 20px;
-            font-weight: 500;
-            color: var(--dark-navy);
-            line-height: 1.6;
-            margin-bottom: 20px;
-            font-family: var(--heading-font);
-        }
-
-        .welcome-text-content p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: var(--text-gray);
-            margin-bottom: 20px;
-        }
-
-        .highlight-quote {
-            background: linear-gradient(135deg, rgba(177, 152, 111, 0.1), rgba(177, 152, 111, 0.02));
-            border-left: 4px solid var(--primary-blue);
-            padding: 24px;
-            border-radius: 0 16px 16px 0;
-            margin-top: 30px;
-            position: relative;
-        }
-
-        .highlight-quote i {
-            position: absolute;
-            top: -12px;
-            left: 20px;
-            font-size: 24px;
-            color: var(--primary-blue);
-            background: #ffffff;
-            padding: 0 10px;
-            transition: background 0.3s ease;
-        }
-
-        .highlight-quote p {
-            margin: 0;
-            font-family: var(--heading-font);
-            font-size: 20px;
-            color: var(--dark-navy);
-            font-weight: 600;
-            font-style: italic;
-        }
-
-        .welcome-contact-card {
-            background: #ffffff;
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.06);
-            border: 1px solid var(--border-color);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            transition: background 0.3s ease, border-color 0.3s ease;
-        }
-
-        .welcome-contact-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: var(--primary-blue);
-        }
-
-        .wcc-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: rgba(177, 152, 111, 0.1);
-            color: var(--primary-blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            margin: 0 auto 24px;
-        }
-
-        .wcc-title {
-            font-family: var(--heading-font);
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--dark-navy);
-            margin-bottom: 16px;
-        }
-
-        .wcc-desc {
-            font-size: 15px;
-            color: var(--text-gray);
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        .wcc-number-wrapper {
-            background: #f8fafc;
-            border-radius: 16px;
-            padding: 20px;
-            border: 1px solid var(--border-color);
-            transition: background 0.3s ease, border-color 0.3s ease;
-        }
-
-        .wcc-label {
-            display: block;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-gray);
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .wcc-number {
-            display: inline-block;
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--primary-blue);
-            text-decoration: none;
-            letter-spacing: 1px;
-            font-family: var(--body-font);
-            transition: transform 0.3s ease, color 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .wcc-number:hover {
-            transform: scale(1.05);
-            color: var(--primary-hover);
-        }
-
-        /* Dark mode overrides for new section */
-        body.dark-theme .welcome-text-content .lead-text { color: #ffffff; }
-        body.dark-theme .welcome-text-content p { color: rgba(255,255,255,0.75); text-align: left; }
-        body.dark-theme .highlight-quote {
-            background: rgba(177, 152, 111, 0.05);
-        }
-        body.dark-theme .highlight-quote i {
-            background: #2c352a; 
-        }
-        body.dark-theme .highlight-quote p {
-            color: #d6c09b;
-        }
-        body.dark-theme .welcome-contact-card {
-            background: rgba(44, 53, 42, 0.85);
-            border-color: rgba(255,255,255,0.1);
-        }
-        body.dark-theme .wcc-title { color: #ffffff; }
-        body.dark-theme .wcc-desc { color: rgba(255,255,255,0.75); }
-        body.dark-theme .wcc-number-wrapper {
-            background: rgba(0,0,0,0.2);
-            border-color: rgba(255,255,255,0.05);
-        }
-        body.dark-theme .wcc-label { color: rgba(255,255,255,0.5); }
-        body.dark-theme .wcc-number { color: #d6c09b; }
-
-        /* ---- Emergency card dark mode ---- */
-        body.dark-theme .emergency-card {
-            background: rgba(44, 53, 42, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(177, 152, 111, 0.2);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-        body.dark-theme .emergency-title { color: #d6c09b; }
-        body.dark-theme .emergency-card p { color: rgba(255,255,255,0.7); }
-        body.dark-theme .emergency-badge {
-            background: rgba(177, 152, 111, 0.15);
-            color: #d6c09b;
-            border-color: rgba(177, 152, 111, 0.3);
-        }
-
-        /* ===================== RESPONSIVE ===================== */
-        @media (max-width: 1199.98px) {
-            .hero-grid-alternative { gap: 40px; }
-            .hero-title { font-size: 52px; }
-        }
-
-        @media (max-width: 991.98px) {
-            .hero-title { font-size: 46px; }
-            .hero-section { padding-top: 40px; padding-bottom: 60px; }
-            .features-section { margin-top: -40px; }
-            .welcome-title { font-size: 38px; }
-            .border-start { border-left: none !important; }
-
-            /* Tablet Grid */
-            .hero-grid-alternative {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .hero-text-content {
-                max-width: 100%;
-                text-align: center;
-            }
-            .hero-desc {
-                margin: 0 auto 32px auto;
-            }
-            .hero-actions {
-                justify-content: center;
-            }
-            .hero-masonry {
-                order: -1; /* Image grid above content */
-            }
-        }
-
-        @media (max-width: 767.98px) {
-            p { text-align: left !important; }
-            .text-center p, .why-choose-card p, .hero-text-content p { text-align: left !important; }
-            .hero-title { font-size: 36px; line-height: 1.2; text-align: left; }
-            .hero-desc { font-size: 16px; max-width: 100%; text-align: left; margin: 0 0 32px 0; }
-            .hero-text-content { text-align: left; }
-            .hero-actions { justify-content: flex-start; }
-            .welcome-title { font-size: 28px; }
-            .section-padding { padding: 50px 0; }
-            .custom-container { padding: 0 16px; }
-            .hero-section { padding-top: 24px; padding-bottom: 40px; }
-            .btn-group-custom { display: flex; flex-direction: column; width: 100%; gap: 12px; }
-            .btn-primary-custom, .btn-outline-custom { width: 100%; justify-content: center; }
-            .emergency-card { padding: 1.5rem; }
-            .features-inner { padding: 18px 16px; }
-            .wcc-number-wrapper { padding: 15px; }
-            .wcc-number { font-size: 28px; }
-            
-            /* Mobile Grid */
-            .hero-masonry {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-            .masonry-col { gap: 12px; }
-            .masonry-item-1 { height: 200px; }
-            .masonry-item-2 { height: 260px; }
-            .masonry-item-3 { height: 180px; }
-            .masonry-item-4 { height: 120px; }
-        }
-
-        @media (max-width: 480px) {
-            .hero-title { font-size: 26px; }
-            .welcome-title { font-size: 24px; }
-            .wcc-number { font-size: 24px; }
-        }
-
-        @media (min-width: 768px) {
-            p { text-align: justify; }
-        }
-    </style>
+    
+    <link rel="stylesheet" href="/icon-dental/assets/css/style.css">
 </head>
 <body>
 
@@ -712,75 +113,75 @@
             </div>
             <div class="row g-4 justify-content-center">
                 <!-- Service 1 -->
-                <div class="col-md-4 col-lg-3">
-                    <div class="service-card p-4 text-center">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="service-card p-3 p-md-4 text-center">
                         <div class="service-icon mb-3 mx-auto" style="position: static; box-shadow: none;">
                             <i class="fa-solid fa-hands-bubbles" style="font-size: 32px; color: var(--primary-blue);"></i>
                         </div>
-                        <h3 class="service-title">Hygienist</h3>
+                        <h3 class="service-title" style="font-size: clamp(14px, 4vw, 18px);">Hygienist</h3>
                     </div>
                 </div>
                 <!-- Service 2 -->
-                <div class="col-md-4 col-lg-3">
-                    <div class="service-card p-4 text-center">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="service-card p-3 p-md-4 text-center">
                         <div class="service-icon mb-3 mx-auto" style="position: static; box-shadow: none;">
                             <i class="fa-regular fa-sun" style="font-size: 32px; color: var(--primary-blue);"></i>
                         </div>
-                        <h3 class="service-title">Tooth Whitening</h3>
+                        <h3 class="service-title" style="font-size: clamp(14px, 4vw, 18px);">Tooth Whitening</h3>
                     </div>
                 </div>
                 <!-- Service 3 -->
-                <div class="col-md-4 col-lg-3">
-                    <div class="service-card p-4 text-center">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="service-card p-3 p-md-4 text-center">
                         <div class="service-icon mb-3 mx-auto" style="position: static; box-shadow: none;">
                             <i class="fa-solid fa-users" style="font-size: 32px; color: var(--primary-blue);"></i>
                         </div>
-                        <h3 class="service-title">Family and general dentistry</h3>
+                        <h3 class="service-title" style="font-size: clamp(14px, 4vw, 18px);">Family & General</h3>
                     </div>
                 </div>
                 <!-- Service 4 -->
-                <div class="col-md-4 col-lg-3">
-                    <div class="service-card p-4 text-center">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="service-card p-3 p-md-4 text-center">
                         <div class="service-icon mb-3 mx-auto" style="position: static; box-shadow: none;">
                             <i class="fa-regular fa-face-smile" style="font-size: 32px; color: var(--primary-blue);"></i>
                         </div>
-                        <h3 class="service-title">Invisalign</h3>
+                        <h3 class="service-title" style="font-size: clamp(14px, 4vw, 18px);">Invisalign</h3>
                     </div>
                 </div>
                 <!-- Service 5 -->
-                <div class="col-md-4 col-lg-3">
-                    <div class="service-card p-4 text-center">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="service-card p-3 p-md-4 text-center">
                         <div class="service-icon mb-3 mx-auto" style="position: static; box-shadow: none;">
                             <i class="fa-solid fa-crown" style="font-size: 32px; color: var(--primary-blue);"></i>
                         </div>
-                        <h3 class="service-title">Bridges & Crowns</h3>
+                        <h3 class="service-title" style="font-size: clamp(14px, 4vw, 18px);">Bridges & Crowns</h3>
                     </div>
                 </div>
                 <!-- Service 6 -->
-                <div class="col-md-4 col-lg-3">
-                    <div class="service-card p-4 text-center">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="service-card p-3 p-md-4 text-center">
                         <div class="service-icon mb-3 mx-auto" style="position: static; box-shadow: none;">
                             <i class="fa-solid fa-wand-magic-sparkles" style="font-size: 32px; color: var(--primary-blue);"></i>
                         </div>
-                        <h3 class="service-title">Bonding</h3>
+                        <h3 class="service-title" style="font-size: clamp(14px, 4vw, 18px);">Bonding</h3>
                     </div>
                 </div>
                 <!-- Service 7 -->
-                <div class="col-md-4 col-lg-3">
-                    <div class="service-card p-4 text-center">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="service-card p-3 p-md-4 text-center">
                         <div class="service-icon mb-3 mx-auto" style="position: static; box-shadow: none;">
                             <i class="fa-regular fa-face-smile-beam" style="font-size: 32px; color: var(--primary-blue);"></i>
                         </div>
-                        <h3 class="service-title">Cosmetic Dentistry</h3>
+                        <h3 class="service-title" style="font-size: clamp(14px, 4vw, 18px);">Cosmetic Dentistry</h3>
                     </div>
                 </div>
                 <!-- Service 8 -->
-                <div class="col-md-4 col-lg-3">
-                    <div class="service-card p-4 text-center">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="service-card p-3 p-md-4 text-center">
                         <div class="service-icon mb-3 mx-auto" style="position: static; box-shadow: none;">
                             <i class="fa-solid fa-screwdriver-wrench" style="font-size: 32px; color: var(--primary-blue);"></i>
                         </div>
-                        <h3 class="service-title">Implants</h3>
+                        <h3 class="service-title" style="font-size: clamp(14px, 4vw, 18px);">Implants</h3>
                     </div>
                 </div>
             </div>
@@ -851,7 +252,7 @@
                         <span class="hero-badge" style="background: rgba(177,152,111,0.2); color: #b1986f;">INVISALIGN</span>
                         <h2 class="welcome-title text-white mt-3">Straighten Your Teeth Without Metal Braces</h2>
                         <p class="text-white-50 mb-4">Transform your smile discreetly using clear aligners designed around your lifestyle.</p>
-                        <ul class="text-white" style="list-style: none; padding: 0;">
+                        <ul class="text-white d-inline-block text-start" style="list-style: none; padding: 0;">
                             <li class="mb-2"><i class="fa-solid fa-check" style="color:#b1986f; margin-right:8px;"></i> Nearly Invisible</li>
                             <li class="mb-2"><i class="fa-solid fa-check" style="color:#b1986f; margin-right:8px;"></i> Comfortable & Removable</li>
                             <li class="mb-2"><i class="fa-solid fa-check" style="color:#b1986f; margin-right:8px;"></i> Faster Results</li>
@@ -865,7 +266,7 @@
                         <span class="hero-badge" style="background: rgba(177,152,111,0.2); color: #b1986f;">DENTAL IMPLANTS</span>
                         <h2 class="welcome-title text-white mt-3">Permanent Solutions For Missing Teeth</h2>
                         <p class="text-white-50 mb-4">Dental implants are the gold standard solution for replacing missing teeth.</p>
-                        <ul class="text-white" style="list-style: none; padding: 0;">
+                        <ul class="text-white d-inline-block text-start" style="list-style: none; padding: 0;">
                             <li class="mb-2"><i class="fa-solid fa-check" style="color:#b1986f; margin-right:8px;"></i> Natural Appearance</li>
                             <li class="mb-2"><i class="fa-solid fa-check" style="color:#b1986f; margin-right:8px;"></i> Improved Confidence</li>
                             <li class="mb-2"><i class="fa-solid fa-check" style="color:#b1986f; margin-right:8px;"></i> Strong & Durable</li>
