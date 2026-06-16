@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // about/why-choose-us.php
 ?>
 <!DOCTYPE html>

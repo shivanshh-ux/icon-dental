@@ -117,9 +117,6 @@
         }
         
         .hero-section {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
             background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
             position: relative;
             padding-top: 80px;
@@ -143,6 +140,38 @@
             position: relative;
             z-index: 2;
         }
+        
+        /* Hero Grid Alternative Layout */
+        .hero-grid-alternative {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        /* Left Side - Masonry Grid */
+        .hero-masonry {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        .masonry-col {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .masonry-item-1 { height: 320px; border-radius: 24px; object-fit: cover; width: 100%; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        .masonry-item-2 { height: 420px; border-radius: 24px; object-fit: cover; width: 100%; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        .masonry-item-3 { height: 280px; border-radius: 24px; object-fit: cover; width: 100%; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        .masonry-item-4 { height: 160px; border-radius: 24px; object-fit: cover; width: 100%; box-shadow: 0 15px 35px rgba(0,0,0,0.1); margin-top: auto; }
+
+        .hero-text-content {
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
         .hero-badge {
             background: linear-gradient(90deg, rgba(177,152,111,0.15), rgba(177,152,111,0.05));
             color: var(--primary-hover);
@@ -155,11 +184,10 @@
             border: 1px solid rgba(177,152,111,0.3);
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            animation: fadeInUp 0.8s ease-out;
             box-shadow: 0 4px 15px rgba(177, 152, 111, 0.1);
         }
         .hero-title {
-            font-size: 72px;
+            font-size: 64px;
             font-weight: 700;
             line-height: 1.1;
             margin-bottom: 24px;
@@ -167,67 +195,16 @@
             background: linear-gradient(to right, var(--dark-navy), var(--primary-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: fadeInUp 0.8s ease-out 0.2s backwards;
         }
         .hero-desc {
-            font-size: 20px;
+            font-size: 18px;
             line-height: 1.7;
-            margin-bottom: 40px;
+            margin-bottom: 32px;
             max-width: 580px;
             color: #475569;
-            animation: fadeInUp 0.8s ease-out 0.4s backwards;
-        }
-        .hero-list {
-            list-style: none; padding: 0;
-            animation: fadeInUp 0.8s ease-out 0.6s backwards;
-            margin-bottom: 40px !important;
-        }
-        .hero-list li {
-            margin-bottom: 16px;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            color: var(--dark-navy);
-            font-weight: 500;
-            transition: transform 0.3s ease;
-        }
-        .hero-list li:hover {
-            transform: translateX(5px);
-        }
-        .hero-list li i {
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-hover));
-            color: white;
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin-right: 14px;
-            font-size: 12px;
-            box-shadow: 0 4px 10px rgba(177, 152, 111, 0.4);
         }
         .hero-actions {
-            animation: fadeInUp 0.8s ease-out 0.8s backwards;
-        }
-        .hero-image-wrapper {
-            position: relative;
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.15), 0 0 0 10px rgba(255,255,255,0.5);
-            height: 650px;
-            width: 100%;
-            animation: floatImage 6s ease-in-out infinite;
-            z-index: 2;
-        }
-        .hero-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s ease;
-        }
-        .hero-image-wrapper:hover img {
-            transform: scale(1.08);
+            margin-bottom: 0;
         }
 
         /* Features Section */
@@ -357,7 +334,7 @@
         body.dark-theme .hero-desc { color: rgba(255,255,255,0.8); }
         body.dark-theme .hero-list li { color: rgba(255,255,255,0.9); }
         body.dark-theme .hero-badge { background: rgba(177, 152, 111, 0.15); color: #d6c09b; border-color: rgba(177,152,111,0.3); }
-        body.dark-theme .hero-image-wrapper { box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 0 10px rgba(255,255,255,0.05); }
+        body.dark-theme .masonry-col img { box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 0 2px rgba(255,255,255,0.05); }
         body.dark-theme .feature-title, body.dark-theme .service-title, body.dark-theme .review-text { color: #ffffff; }
         body.dark-theme .feature-text { color: #cbd5e1; }
         body.dark-theme .welcome-desc { color: rgba(255,255,255,0.75); }
@@ -366,7 +343,7 @@
         body.dark-theme .features-inner { background-color: rgba(73, 87, 70, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
         body.dark-theme .feature-icon-wrapper { background-color: rgba(177, 152, 111, 0.2); color: #d6c09b; }
         body.dark-theme .service-card { background-color: rgba(73, 87, 70, 0.6); border-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
-        body.dark-theme .service-icon { background-color: #1e293b; color: #d6c09b; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        body.dark-theme .service-icon { background-color: transparent; color: #d6c09b; box-shadow: none; }
         body.dark-theme .service-card ul li { color: rgba(255, 255, 255, 0.65) !important; }
         body.dark-theme .service-card p { color: rgba(255, 255, 255, 0.65) !important; }
         body.dark-theme .service-card h3 { color: #ffffff !important; }
@@ -523,6 +500,7 @@
             letter-spacing: 1px;
             font-family: var(--body-font);
             transition: transform 0.3s ease, color 0.3s ease;
+            white-space: nowrap;
         }
 
         .wcc-number:hover {
@@ -571,34 +549,72 @@
         }
 
         /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 1199.98px) {
+            .hero-grid-alternative { gap: 40px; }
+            .hero-title { font-size: 52px; }
+        }
+
         @media (max-width: 991.98px) {
             .hero-title { font-size: 46px; }
-            .hero-section { min-height: auto; padding-top: 40px; padding-bottom: 60px; }
-            .hero-image-wrapper { height: 380px; margin-top: 36px; }
+            .hero-section { padding-top: 40px; padding-bottom: 60px; }
             .features-section { margin-top: -40px; }
             .welcome-title { font-size: 38px; }
             .border-start { border-left: none !important; }
+
+            /* Tablet Grid */
+            .hero-grid-alternative {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero-text-content {
+                max-width: 100%;
+                text-align: center;
+            }
+            .hero-desc {
+                margin: 0 auto 32px auto;
+            }
+            .hero-actions {
+                justify-content: center;
+            }
+            .hero-masonry {
+                order: -1; /* Image grid above content */
+            }
         }
 
         @media (max-width: 767.98px) {
             p { text-align: left !important; }
-            .text-center p, .why-choose-card p { text-align: left !important; }
-            .hero-title { font-size: 30px; line-height: 1.2; }
-            .hero-desc { font-size: 15px; max-width: 100%; }
+            .text-center p, .why-choose-card p, .hero-text-content p { text-align: left !important; }
+            .hero-title { font-size: 36px; line-height: 1.2; text-align: left; }
+            .hero-desc { font-size: 16px; max-width: 100%; text-align: left; margin: 0 0 32px 0; }
+            .hero-text-content { text-align: left; }
+            .hero-actions { justify-content: flex-start; }
             .welcome-title { font-size: 28px; }
             .section-padding { padding: 50px 0; }
             .custom-container { padding: 0 16px; }
             .hero-section { padding-top: 24px; padding-bottom: 40px; }
-            .hero-image-wrapper { height: 240px; margin-top: 24px; }
             .btn-group-custom { display: flex; flex-direction: column; width: 100%; gap: 12px; }
             .btn-primary-custom, .btn-outline-custom { width: 100%; justify-content: center; }
             .emergency-card { padding: 1.5rem; }
             .features-inner { padding: 18px 16px; }
+            .wcc-number-wrapper { padding: 15px; }
+            .wcc-number { font-size: 28px; }
+            
+            /* Mobile Grid */
+            .hero-masonry {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .masonry-col { gap: 12px; }
+            .masonry-item-1 { height: 200px; }
+            .masonry-item-2 { height: 260px; }
+            .masonry-item-3 { height: 180px; }
+            .masonry-item-4 { height: 120px; }
         }
 
         @media (max-width: 480px) {
             .hero-title { font-size: 26px; }
             .welcome-title { font-size: 24px; }
+            .wcc-number { font-size: 24px; }
         }
 
         @media (min-width: 768px) {
@@ -615,33 +631,36 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container custom-container hero-content">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <span class="hero-badge"><i class="fa-solid fa-star me-2"></i> Icon Dental Wembley</span>
-                    <h2 class="hero-title">Premium Family &<br>Cosmetic Dentist</h2>
+            <div class="hero-grid-alternative">
+                
+                <!-- LEFT SIDE: Masonry Image Grid -->
+                <div class="hero-masonry">
+                    <div class="masonry-col">
+                        <img src="assets/images/hero.png?v=2" class="masonry-item-1" alt="Smiling Patient">
+                        <img src="assets/images/invisalign-treatment.png?v=3" class="masonry-item-3" alt="Clear Aligners Patient">
+                    </div>
+                    <div class="masonry-col">
+                        <img src="assets/images/reception.png?v=2" class="masonry-item-2" alt="Clinic Reception">
+                        <img src="assets/images/smile.png?v=3" class="masonry-item-4" alt="Healthy Smile">
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE: Content Area -->
+                <div class="hero-text-content">
+                    <span class="hero-badge"><i class="fa-solid fa-star me-2"></i> GENERAL DENTISTRY</span>
+                    <h2 class="hero-title">Enhance Your Smile.<br>Enhance Your Confidence.</h2>
                     <p class="hero-desc">Experience modern dentistry in a comfortable, welcoming environment where your smile comes first. We combine advanced technology with a gentle touch to deliver exceptional results.</p>
                     
-                    <ul class="hero-list">
-                        <li><i class="fa-solid fa-check"></i> Same-Day Emergency Appointments</li>
-                        <li><i class="fa-solid fa-check"></i> Invisalign & Smile Makeovers</li>
-                        <li><i class="fa-solid fa-check"></i> Dental Implants & Restorative Care</li>
-                        <li><i class="fa-solid fa-check"></i> Flexible Finance Options Available</li>
-                    </ul>
-
                     <div class="btn-group-custom d-flex gap-3 hero-actions">
-                        <a href="/icon-dental/book-online.php" class="btn-primary-custom px-4 py-3" style="font-size: 16px;">
-                            <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                        <a href="/icon-dental/book-online.php" class="btn-primary-custom px-4 py-3 m-0" style="font-size: 16px;">
+                            <i class="fa-regular fa-calendar-check"></i> Book Consultation
                         </a>
-                        <a href="/icon-dental/treatments.php" class="btn-outline-custom px-4 py-3" style="font-size: 16px;">
-                            Explore Treatments <i class="fa-solid fa-arrow-right"></i>
+                        <a href="/icon-dental/treatments.php" class="btn-outline-custom px-4 py-3 m-0" style="font-size: 16px;">
+                            Learn More <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="hero-image-wrapper">
-                        <img src="assets/images/hero.png" alt="Smiling Dental Patient">
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
